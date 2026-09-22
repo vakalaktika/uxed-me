@@ -8,13 +8,12 @@ const NAV_LINKS = [
   { href: "/about", label: "About", key: "about" },
 ];
 
-/* Sized so the drawn mark matches the tallest letters in the wordmark:
-   the art fills 22.7 of the 24-unit viewBox, so 16px renders ~15px of
-   ink, the ascender height of Fraunces 600 at the brand's 20px.
-   The three orbits cross near the middle, so a heavy stroke fills the
-   counters in and the mark reads as a blob; 1.4 at this size keeps them
-   open without going wispy against the wordmark. */
-const ATOM_MARK = `<svg class="atom-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.6" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle class="atom-mark__electron" r="1.2" fill="currentColor" stroke="none" opacity="0"><animateMotion dur="1.5s" begin="indefinite" fill="remove" calcMode="spline" keyTimes="0;1" keySplines="0.45 0.05 0.55 0.95" path="M 2 12 a 10 4 0 1 0 20 0 a 10 4 0 1 0 -20 0"/><animate attributeName="opacity" dur="1.5s" begin="indefinite" fill="remove" values="0;1;1;0" keyTimes="0;0.18;0.82;1"/></circle></svg>`;
+/* 24px: the art fills 22.7 of the 24-unit viewBox, so it renders ~22.7px
+   of ink — deliberately larger than the wordmark's 15px ascender, so the
+   mark reads as a logo beside the name rather than as a letter in it.
+   Scaled uniformly from the 16px version, so the orbits keep the density
+   that stops the three crossings reading as a blob. */
+const ATOM_MARK = `<svg class="atom-mark" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.6" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle class="atom-mark__electron" r="1.2" fill="currentColor" stroke="none" opacity="0"><animateMotion dur="1.5s" begin="indefinite" fill="remove" calcMode="spline" keyTimes="0;1" keySplines="0.45 0.05 0.55 0.95" path="M 2 12 a 10 4 0 1 0 20 0 a 10 4 0 1 0 -20 0"/><animate attributeName="opacity" dur="1.5s" begin="indefinite" fill="remove" values="0;1;1;0" keyTimes="0;0.18;0.82;1"/></circle></svg>`;
 
 function nav(activeKey) {
   const links = NAV_LINKS.map(
