@@ -9,6 +9,11 @@
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
 img, svg { max-width: 100%; display: block; }
+/* Without this, an <img> carrying width/height attributes keeps the height
+   presentational hint after max-width shrinks the width, and renders
+   stretched. Component rules that need a fixed height are class-scoped and
+   still win. */
+img { height: auto; }
 /* Prose links only. These must NOT reach anchors carrying an Atomic Age
    component class: `a:hover` (0,1,1) outranks `.atm-btn` (0,1,0), so the bare
    rule repainted every link-button's label --primary-hover on hover, dropping
@@ -117,6 +122,39 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 }
 .meta-panel dt { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; font-weight: 600; color: var(--ink-muted); margin: 0 0 var(--space-2); }
 .meta-panel dd { font-family: var(--font-body); font-size: 15px; line-height: 22px; color: var(--ink); margin: 0; }
+
+/* ---------- Brand mark ----------
+   The electron lap is SMIL (<animateMotion> in the mark itself), driven from
+   site.js — CSS offset-path on SVG children is unreliable in WebKit. Nothing
+   here may set .atom-mark__electron's opacity: a CSS rule would outrank the
+   SMIL animation of that presentation attribute and pin the dot visible. */
+
+/* ---------- About ---------- */
+.about-layout {
+  display: grid;
+  /* A fixed portrait column, so the image and the copy stay adjacent instead
+     of leaving a gap where a fractional column overshoots the 340px cap. */
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: var(--space-9);
+  align-items: start;
+  padding-bottom: var(--space-11);
+}
+.hero__portrait {
+  aspect-ratio: 1 / 1;
+  max-width: 340px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-strong);
+  background: var(--surface-raised);
+}
+.hero__portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about-lede { color: var(--ink-secondary); margin-bottom: var(--space-5); }
+.about-cta { margin-top: var(--space-2); }
+
+@media (max-width: 700px) {
+  .about-layout { grid-template-columns: 1fr; gap: var(--space-7); }
+  .hero__portrait { max-width: 240px; }
+}
 
 .hero-figure { margin: 0 0 var(--space-9); }
 .hero-figure img { width: 100%; height: auto; border-radius: var(--radius-lg); border: 1.5px solid var(--border-strong); }

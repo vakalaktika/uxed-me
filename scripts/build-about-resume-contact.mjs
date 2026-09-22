@@ -18,18 +18,17 @@ const aboutBody = `
   <p class="atm-eyebrow">About</p>
   <h1>Hello, I’m Ed</h1>
 </section>
-<section class="atm-container" style="padding-bottom:var(--space-11);display:grid;grid-template-columns:0.8fr 1.2fr;gap:var(--space-9);align-items:start">
-  <div class="hero__portrait" style="aspect-ratio:1/1">
+<section class="atm-container about-layout">
+  <div class="hero__portrait">
     <img src="${aboutPortrait.src}" width="${aboutPortrait.width}" height="${aboutPortrait.height}" alt="Portrait of Ed Guillen" loading="eager">
   </div>
   <div class="prose">
-    <p class="t-body-lg" style="color:var(--ink-secondary)">I know that communication among developers, management, and marketing can be tough, but I like helping these teams connect. I have experience in these roles and understand how to balance user needs with business goals.</p>
-    <p>I also enjoy making bread — b. 1986, HK.</p>
-    <a class="atm-btn atm-btn--secondary" href="/resume" style="margin-top:var(--space-2)">View resume</a>
+    <p class="t-body-lg about-lede">I know that communication among developers, management, and marketing can be tough, but I like helping these teams connect. I have experience in these roles and understand how to balance user needs with business goals.</p>
+    <p>I also enjoy <a href="https://www.instagram.com/edmakesbread/" target="_blank" rel="noopener noreferrer">making bread</a>.</p>
+    <a class="atm-btn atm-btn--secondary about-cta" href="/resume">View resume</a>
     ${socialLinks()}
   </div>
 </section>
-<style>@media (max-width:700px){section[style*="grid-template-columns:0.8fr"]{grid-template-columns:1fr !important}}</style>
 `;
 
 writeFileSync(
