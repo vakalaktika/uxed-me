@@ -171,25 +171,94 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 /* ---------- Social / contact ---------- */
 .social-row { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
 
-/* ---------- Hero (home) ---------- */
-.hero {
-  padding: var(--space-11) 0 var(--space-9);
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-9);
-  align-items: center;
+/* ---------- Hero (home) ----------
+   Desktop (≥901px): split panel — text column + full-height inverse
+   panel holding the portrait and the orbit motif as ambient ground.
+   Mobile (≤900px): compact signature badge — small portrait inline
+   with the name, centered column. Both markup blocks ship; only one
+   is ever displayed, so only one is in the a11y tree at a time. */
+.hero { padding: 0; }
+
+.hero__desktop { display: grid; grid-template-columns: 1fr minmax(320px, 42%); align-items: stretch; }
+.hero__mobile { display: none; }
+
+.hero__content {
+  padding: var(--space-11) var(--space-6) var(--space-10) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.hero__portrait {
-  border-radius: var(--radius-xl);
-  border: 1.5px solid var(--border-strong);
+.hero__heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1.03;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.hero__role {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  margin: var(--space-2) 0 0;
+}
+.hero__lede {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--ink-secondary);
+  margin: var(--space-4) 0 0;
+  max-width: 46ch;
+}
+.hero__actions { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; margin-top: var(--space-7); }
+.hero__actions .atm-btn--secondary {
+  height: 52px;
+  padding: 0 var(--space-6);
+  font-size: 15px;
+  border-radius: var(--radius-pill);
+}
+
+.hero__panel {
+  position: relative;
   overflow: hidden;
-  aspect-ratio: 4/5;
+  background: var(--surface-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
 }
-.hero__portrait img { width: 100%; height: 100%; object-fit: cover; }
+.hero__panel-motif { position: absolute; color: var(--ink-on-inverse); opacity: 0.08; }
+.hero__panel-portrait {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: var(--radius-pill);
+  border: 3px solid var(--palette-turquoise);
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.hero__panel-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero__portrait { max-width: 360px; }
+  .hero__desktop { display: none; }
+  .hero__mobile { display: block; text-align: center; padding: var(--space-9) var(--space-5) var(--space-8); }
+  .hero__heading { font-size: 44px; }
+  .hero__lede { margin: var(--space-4) auto 0; }
+  .hero__actions { justify-content: center; }
+
+  .hero__badge { position: relative; display: inline-block; width: 88px; height: 88px; margin-bottom: var(--space-5); }
+  .hero__badge-motif { position: absolute; left: -22px; top: -22px; color: var(--primary); opacity: 0.5; }
+  .hero__badge-portrait {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    border-radius: var(--radius-pill);
+    border: 3px solid var(--surface-raised);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+  .hero__badge-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
 
 /* ---------- Resume ---------- */
