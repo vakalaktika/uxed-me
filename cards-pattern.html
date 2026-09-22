@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unifying EVERFI’s Card Components — Ed Guillen</title>
+<meta name="description" content="Creating a responsive and versatile card component used across all EVERFI applications, unifying the user experience and improving usability.">
+<link rel="canonical" href="https://www.uxed.me/cards-pattern">
+<link rel="stylesheet" href="/assets/atomic-age/tokens.css">
+<link rel="stylesheet" href="/assets/atomic-age/bundle.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="atm-scope">
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<nav class="atm-topnav">
+  <a class="atm-topnav__brand" href="/"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg> Ed Guillen</a>
+  <div class="atm-topnav__links"><a class="atm-topnav__link is-active" href="/" aria-current="page">Work</a><a class="atm-topnav__link" href="/resume">Resume</a><a class="atm-topnav__link" href="/about">About</a></div>
+  <a class="atm-btn atm-btn--sm atm-btn--secondary" href="/contact">Contact</a>
+  <button class="atm-iconbtn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-sheet" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>
+<div class="nav-sheet" id="nav-sheet" data-nav-sheet hidden>
+  <div class="nav-sheet__top">
+    <a class="atm-topnav__brand" href="/"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg> Ed Guillen</a>
+    <button class="atm-iconbtn" data-nav-close aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="nav-sheet__links">
+    <a href="/">Work</a>
+    <a href="/resume">Resume</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+</div></header>
+<main id="main">
+
+<div class="atm-container article-header">
+  <p class="atm-eyebrow">Design systems · Design thinking · Information architecture · Design strategy</p>
+  <h1>Unifying EVERFI’s card components</h1>
+  
+  <dl class="meta-panel">
+    <div><dt>My role</dt><dd>Design Lead</dd></div>
+    <div><dt>Company</dt><dd>EVERFI</dd></div>
+    <div><dt>Timeframe</dt><dd>February 2024 – August 2024</dd></div>
+    <div><dt>Collaborators</dt><dd>Design: Bob Weisbecker, Alyssa Kjar · Engineering: Eric Shank, Gwen Latasa, Anushree Patil · Product: Anu Burns, Marianne Epstein</dd></div>
+  </dl>
+</div>
+<div class="atm-container">
+  <figure class="hero-figure">
+    <img src="/assets/img/cards-pattern/eb60cae6-outcome.webp" width="1600" height="492" alt="Three product scenarios shown with the new unified card design" loading="eager">
+  </figure>
+</div>
+
+<div class="atm-container">
+  <div class="prose">
+    <h2>Outcome</h2>
+    <p>The outcome of this project was a standardized card component that unified the visual experience, improved user interaction, and streamlined the design process by establishing clear standards and best practices across EVERFI’s products.</p>
+
+    <h2>Background</h2>
+    <p>EVERFI is a leading ed-tech company that delivers critical skills education through SaaS solutions across sectors including K-12, elective learning, financial education, and workplace training. As new products emerged over the years, some inconsistency emerged with them — particularly in our card components.</p>
+
+    <h2>The challenge</h2>
+    <p>Create a responsive and versatile card component that can be used across all EVERFI applications, unifying the user experience and improving usability. The component needed to accommodate different content types, metadata, and use cases while staying scalable and accessible.</p>
+
+    <h3>Problems to solve</h3>
+    <ul>
+      <li><strong>Inconsistent card designs</strong> — multiple versions of card components with differing styles, sizes, and interactions across the platform were causing confusion.</li>
+      <li><strong>User difficulty</strong> — users had trouble finding the right information on cards because they had to relearn card structures in different parts of the platform.</li>
+      <li><strong>Lack of standards</strong> — no defined best practices or guidelines for card component usage.</li>
+      <li><strong>Maintenance challenges</strong> — lack of standardization made it difficult to design new experiences across the platform.</li>
+    </ul>
+
+    <h2>Solution</h2>
+    <p>Align around an intentional design language: create a unified card component and establish best practices for a cohesive visual experience across EVERFI’s platform and products.</p>
+
+    <h3>Guiding principles</h3>
+    <ul>
+      <li><strong>Consistency</strong> — every card feels like a family and behaves predictably.</li>
+      <li><strong>Accessibility</strong> — align with current WCAG 2.0 standards.</li>
+      <li><strong>Flexibility</strong> — support various sizes and data scenarios across EVERFI’s products.</li>
+      <li><strong>Scalability</strong> — design with future growth in mind to accommodate new metadata types.</li>
+      <li><strong>Collaboration</strong> — involve cross-functional teams to gather insights and needs.</li>
+    </ul>
+
+    <h2>Discover &amp; define</h2>
+    <p>My first step was to fully understand the landscape of our existing card component with a targeted audit: cataloging where the component was used, how, what information it displayed, and the variants needed for each product. Working in Figma, we built a repository the whole team could collaborate in and reference going forward.</p>
+    <figure class="">
+      <img src="/assets/img/cards-pattern/af23422c-product-audit.webp" width="1600" height="1032" alt="Product card component audit" loading="lazy">
+    </figure>
+    <p>As part of the working session, we looked at industry standards for card components — tags versus badges, image ratios, card orientations — and how to communicate the desired messaging and metadata successfully.</p>
+
+    <h2>Early exploration</h2>
+    <p>After cataloging our findings, we moved into ideation using Figma and FigJam, holding collaborative workshops to brainstorm and challenge different ideas.</p>
+    <figure class="">
+      <img src="/assets/img/cards-pattern/3b9109be-metadata-audit.webp" width="1600" height="866" alt="Card metadata audit" loading="lazy">
+    </figure>
+    <p>We had deep discussions about metadata arrangement: establishing a common language for tags and badges, when to use them, and how to build a clear information hierarchy — plus visual elements like image ratios and card orientation. Each session built on the insights of the last.</p>
+    <div class="hub-grid" style="margin:var(--space-8) 0">
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/ed32dd7a-early-explorations-details.webp" width="1600" height="771" alt="Early card exploration — detail variants" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/34651eb0-elective-learning.webp" width="1600" height="756" alt="Elective Learning card exploration" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/b8d541b1-k12-learner.webp" width="1600" height="756" alt="K-12 Learner card exploration" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/caadc746-k12-teacher.webp" width="1600" height="756" alt="K-12 Teacher card exploration" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/e15837dd-platform-course-card.webp" width="1600" height="756" alt="Platform course card exploration" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+    </div>
+
+    <h2>Design &amp; iterate</h2>
+    <p>For the proof of concept, we developed several card variants in standardized sizes (narrow, medium, wide), each with predefined metadata configurations for specific use cases — consistency with room for flexibility. We then mocked up the screens and cards collected in the initial audit; seeing the components in context across different use cases was invaluable.</p>
+    <figure class="">
+      <img src="/assets/img/cards-pattern/1ad46369-early-explorations-details.webp" width="1600" height="741" alt="Early versus final card iteration" loading="lazy">
+    </figure>
+    <p>We established responsive design principles so cards would display effectively across devices and screen sizes, and defined clear rules for primary, secondary, and tertiary metadata to help users prioritize information naturally.</p>
+    <figure class="">
+      <img src="/assets/img/cards-pattern/2a14a861-new-card-component-specs.webp" width="1600" height="661" alt="Card specifications and metadata description" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/cards-pattern/83811250-new-card-component-variants.webp" width="1600" height="1095" alt="Card layouts and variants" loading="lazy">
+    </figure>
+    <p>To ensure consistent implementation, I built a Storybook.js specification as a single source of truth, documenting visual design, metadata hierarchy, variant/orientation options, and edge cases.</p>
+    <div class="hub-grid" style="margin:var(--space-8) 0">
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/48918ef1-after-elective-learning-pathway-1.webp" width="1600" height="726" alt="Final elective learning pathway card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/7cd409a1-after-elective-learning-platform.webp" width="1600" height="536" alt="Final elective learning platform card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/38f9368c-after-elective-learning-hub.webp" width="1600" height="1282" alt="Final elective learning hub card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/796b526e-after-elective-learning-pathway.webp" width="1600" height="779" alt="Final elective learning pathway card, alternate state" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/44576050-after-elective-learner.webp" width="1600" height="551" alt="Final elective learner card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/4cd1a3ad-after-k-12-teacher.webp" width="1600" height="988" alt="Final K-12 teacher card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/1eaf1259-after-assigned-learning-pathway.webp" width="1600" height="851" alt="Final assigned learning pathway card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/82fc03ae-after-elective-student.webp" width="1600" height="810" alt="Final elective student card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/cards-pattern/82379541-after-elective-admin.webp" width="1600" height="717" alt="Final elective admin card" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+    </div>
+
+    <h2>Key results</h2>
+    <ul>
+      <li><strong>Improved user experience</strong> — users found information faster and navigated the platform with more ease; the new metadata hierarchy reduced cognitive load.</li>
+      <li><strong>Positive feedback</strong> — initial testing showed higher task completion rates and satisfaction with the clarity of information.</li>
+      <li><strong>Design efficiency</strong> — standardizing the component cut down redesign work, freeing designers to focus on other parts of the experience.</li>
+      <li><strong>Enhanced collaboration</strong> — stronger alignment between design, development, and content teams, with open channels for future issues.</li>
+      <li><strong>Scalability achieved</strong> — the component is backwards-compatible and can be integrated into new products seamlessly.</li>
+    </ul>
+
+    <h2>Summary</h2>
+    <p>This became more than a design update — a strategic overhaul that addressed fundamental platform issues and advanced our Unified Design Library’s goal of a cohesive interface experience. By applying systems thinking and involving cross-functional teams, we created a scalable, accessible card component built to adapt to future needs.</p>
+
+    <h3>Lessons learned</h3>
+    <ul>
+      <li><strong>Value of routine evaluations</strong> — regular audits of design components surface issues before they grow into bigger problems.</li>
+      <li><strong>Importance of collaboration</strong> — engaging every stakeholder is key to building the right features into new components.</li>
+      <li><strong>Documentation is key</strong> — detailed documentation keeps things consistent and gives future projects a reference point.</li>
+      <li><strong>Holistic problem-solving</strong> — focusing on underlying issues rather than symptoms leads to more sustainable solutions.</li>
+      <li><strong>Continuous improvement</strong> — a proactive approach keeps the user experience at the forefront.</li>
+    </ul>
+  </div>
+</div>
+<div class="atm-container">
+  <div class="article-nav">
+    <a class="atm-link t-body-sm" href="/">← All work</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="atm-container">
+    <p class="t-body-sm" style="color:var(--ink-muted)">&copy; 2026 Ed Guillen. Built with the Atomic Age design system.</p>
+    <a class="atm-link t-body-sm" href="https://www.instagram.com/edmakesbread/" style="color:var(--ink-muted)">@edmakesbread</a>
+  </div>
+</footer>
+<script src="/assets/atomic-age/bundle.js"></script>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

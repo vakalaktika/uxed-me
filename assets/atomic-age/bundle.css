@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Jost:wght@400;500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ============================================================
+   ATOMIC AGE — component stylesheet (atm- namespace)
+   Loaded after tokens.css. Every value is a token custom
+   property; motion respects prefers-reduced-motion.
+   ============================================================ */
+
+:root {
+  --atm-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --atm-ease-mech: cubic-bezier(0.65, 0, 0.35, 1);
+  --atm-dur-1: 120ms;
+  --atm-dur-2: 200ms;
+  --atm-dur-3: 320ms;
+  --atm-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
+  --atm-outline: 1px solid var(--border-strong);
+}
+
+.atm-root, .atm-scope {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+/* hidden always wins, even over an inline display (dialogs, tab panels) */
+[hidden] { display: none !important; }
+.atm-root *, .atm-scope * { box-sizing: border-box; }
+
+/* ---- Focus: one visible ring everywhere ---- */
+.atm-root :focus-visible,
+.atm-scope :focus-visible,
+[class^="atm-"]:focus-visible,
+[class*=" atm-"]:focus-visible {
+  outline: none;
+  box-shadow: var(--atm-ring);
+}
+
+/* ---- Type helpers (in case classes are used directly) ---- */
+.atm-eyebrow { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.16em; font-weight: 600; font-size: 12px; line-height: 16px; color: var(--accent); }
+.atm-eyebrow--muted { color: var(--ink-muted); }
+.atm-mark { background: var(--highlight); color: var(--on-highlight); padding: 0 .18em; border-radius: var(--radius-sm); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.atm-btn {
+  --_bg: var(--primary);
+  --_fg: var(--on-primary);
+  --_bd: transparent;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  font-family: var(--font-sans); font-weight: 600; font-size: 14px; letter-spacing: 0.06em;
+  text-transform: uppercase; text-decoration: none; line-height: 1;
+  padding: 0 var(--space-5); height: 44px; min-width: 44px;
+  color: var(--_fg); background: var(--_bg);
+  border: 1px solid var(--_bd); border-radius: var(--radius-md);
+  cursor: pointer; transition: transform var(--atm-dur-1) var(--atm-ease), box-shadow var(--atm-dur-2) var(--atm-ease), background var(--atm-dur-1) var(--atm-ease);
+  white-space: nowrap; user-select: none;
+}
+.atm-btn:hover { background: var(--primary-hover); transform: translate(-1px, -1px); box-shadow: var(--shadow-pop); }
+.atm-btn:active { transform: translate(1px, 1px); box-shadow: none; }
+.atm-btn svg { width: 18px; height: 18px; display: block; }
+
+.atm-btn--secondary { --_bg: transparent; --_fg: var(--ink); --_bd: var(--border-control); }
+.atm-btn--secondary:hover { background: var(--surface-raised); }
+.atm-btn--accent { --_bg: var(--accent); --_fg: var(--on-accent); }
+.atm-btn--accent:hover { background: var(--accent-hover); }
+.atm-btn--cta { --_bg: var(--accent); --_fg: var(--on-accent); border-radius: var(--radius-pill); height: 52px; padding: 0 var(--space-6); font-size: 15px; }
+.atm-btn--cta:hover { background: var(--accent-hover); }
+.atm-btn--tertiary { --_bg: transparent; --_fg: var(--primary); box-shadow: none; padding: 0 var(--space-3); }
+.atm-btn--tertiary:hover { background: var(--primary-soft); transform: none; box-shadow: none; }
+.atm-btn--ghost { --_bg: transparent; --_fg: var(--ink); }
+.atm-btn--ghost:hover { background: var(--surface-sunken); transform: none; box-shadow: none; }
+.atm-btn--sm { height: 36px; font-size: 12.5px; padding: 0 var(--space-4); }
+.atm-btn--lg { height: 52px; font-size: 15px; padding: 0 var(--space-6); }
+.atm-btn--block { width: 100%; }
+.atm-btn[disabled], .atm-btn.is-disabled { opacity: var(--opacity-disabled); cursor: not-allowed; pointer-events: none; }
+
+.atm-link { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; font-weight: 500; }
+.atm-link:hover { color: var(--primary-hover); text-decoration-color: var(--accent); }
+
+/* Icon button */
+.atm-iconbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius-pill);
+  background: transparent; color: var(--ink); border: 1px solid transparent; cursor: pointer;
+  transition: background var(--atm-dur-1) var(--atm-ease), border-color var(--atm-dur-1) var(--atm-ease);
+}
+.atm-iconbtn:hover { background: var(--surface-sunken); }
+.atm-iconbtn--outline { border-color: var(--border-strong); }
+.atm-iconbtn svg { width: 20px; height: 20px; }
+
+/* Floating action button */
+.atm-fab {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: var(--radius-pill);
+  background: var(--accent); color: var(--on-accent); border: none; cursor: pointer;
+  box-shadow: var(--shadow-lg); transition: transform var(--atm-dur-1) var(--atm-ease);
+}
+.atm-fab:hover { transform: translateY(-2px) rotate(-4deg); }
+.atm-fab svg { width: 24px; height: 24px; }
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+.atm-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.atm-label { font-family: var(--font-sans); font-weight: 600; font-size: 13px; letter-spacing: 0.04em; color: var(--ink); }
+.atm-label .atm-req { color: var(--accent); margin-left: 2px; }
+.atm-help { font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+.atm-help--error { color: var(--error); display: flex; gap: var(--space-2); align-items: center; }
+.atm-help--success { color: var(--success); display: flex; gap: var(--space-2); align-items: center; }
+
+.atm-input, .atm-textarea, .atm-select {
+  font-family: var(--font-body); font-size: 16px; color: var(--ink);
+  background: var(--surface-raised); border: 1px solid var(--border-control);
+  border-radius: var(--radius-sm); padding: 0 var(--space-4); height: 46px; width: 100%;
+  transition: border-color var(--atm-dur-1) var(--atm-ease), box-shadow var(--atm-dur-1) var(--atm-ease);
+}
+.atm-textarea { height: auto; min-height: 108px; padding: var(--space-3) var(--space-4); line-height: 24px; resize: vertical; }
+.atm-input::placeholder, .atm-textarea::placeholder { color: var(--ink-muted); }
+.atm-input:hover, .atm-textarea:hover, .atm-select:hover { border-color: var(--ink-secondary); }
+.atm-input:focus, .atm-textarea:focus, .atm-select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.atm-input.is-invalid, .atm-textarea.is-invalid, .atm-select.is-invalid { border-color: var(--error); background: var(--error-soft); }
+.atm-input.is-valid { border-color: var(--success); }
+.atm-input[disabled], .atm-textarea[disabled], .atm-select[disabled] { background: var(--disabled-surface); color: var(--disabled-ink); cursor: not-allowed; }
+
+.atm-select-wrap { position: relative; }
+.atm-select { appearance: none; -webkit-appearance: none; padding-right: var(--space-8); cursor: pointer; }
+.atm-select-wrap::after {
+  content: ""; position: absolute; right: 18px; top: 50%; width: 9px; height: 9px;
+  border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+  transform: translateY(-70%) rotate(45deg); pointer-events: none;
+}
+
+/* Search */
+.atm-search { position: relative; }
+.atm-search .atm-input { padding-left: var(--space-8); border-radius: var(--radius-pill); }
+.atm-search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--ink-muted); pointer-events: none; }
+
+/* Checkbox & radio — vintage printed outline */
+.atm-check, .atm-radio { display: inline-flex; align-items: flex-start; gap: var(--space-3); cursor: pointer; font-size: 15px; line-height: 22px; color: var(--ink); }
+.atm-check input, .atm-radio input { position: absolute; opacity: 0; width: 0; height: 0; }
+.atm-check .atm-box, .atm-radio .atm-box {
+  flex: none; width: 22px; height: 22px; margin-top: 1px; background: var(--surface-raised);
+  border: 1px solid var(--border-control); display: inline-flex; align-items: center; justify-content: center;
+  transition: background var(--atm-dur-1) var(--atm-ease), border-color var(--atm-dur-1) var(--atm-ease);
+}
+.atm-check .atm-box { border-radius: var(--radius-sm); }
+.atm-radio .atm-box { border-radius: var(--radius-pill); }
+.atm-check .atm-box svg { width: 14px; height: 14px; color: var(--on-primary); opacity: 0; transform: scale(0.6); transition: opacity var(--atm-dur-1) var(--atm-ease), transform var(--atm-dur-1) var(--atm-ease); }
+.atm-radio .atm-box::after { content: ""; width: 10px; height: 10px; border-radius: var(--radius-pill); background: var(--on-primary); opacity: 0; transform: scale(0.4); transition: opacity var(--atm-dur-1) var(--atm-ease), transform var(--atm-dur-1) var(--atm-ease); }
+.atm-check input:checked + .atm-box, .atm-radio input:checked + .atm-box { background: var(--primary); border-color: var(--primary); }
+.atm-check input:checked + .atm-box svg { opacity: 1; transform: scale(1); }
+.atm-radio input:checked + .atm-box::after { opacity: 1; transform: scale(1); }
+.atm-check input:focus-visible + .atm-box, .atm-radio input:focus-visible + .atm-box { box-shadow: var(--atm-ring); }
+
+/* Toggle — capsule with orbiting knob */
+.atm-toggle { display: inline-flex; align-items: center; gap: var(--space-3); cursor: pointer; }
+.atm-toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.atm-toggle .atm-track {
+  width: 52px; height: 30px; border-radius: var(--radius-pill); background: var(--surface-sunken);
+  border: 1px solid var(--border-control); position: relative; transition: background var(--atm-dur-2) var(--atm-ease), border-color var(--atm-dur-2) var(--atm-ease);
+}
+.atm-toggle .atm-knob {
+  position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; border-radius: var(--radius-pill);
+  background: var(--surface-raised); border: 1px solid var(--border-strong);
+  transition: transform var(--atm-dur-2) var(--atm-ease-mech);
+}
+.atm-toggle input:checked + .atm-track { background: var(--primary); border-color: var(--primary); }
+.atm-toggle input:checked + .atm-track .atm-knob { transform: translateX(22px); border-color: var(--primary-hover); }
+.atm-toggle input:focus-visible + .atm-track { box-shadow: var(--atm-ring); }
+
+/* ============================================================
+   BADGES / TAGS / STATUS PILLS
+   ============================================================ */
+.atm-badge { display: inline-flex; align-items: center; gap: var(--space-1); font-family: var(--font-sans); font-weight: 600; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px var(--space-3); border-radius: var(--radius-pill); background: var(--surface-sunken); color: var(--ink); border: 1px solid var(--border-strong); }
+.atm-badge--solid { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.atm-badge--accent { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.atm-badge--highlight { background: var(--highlight); color: var(--on-highlight); border-color: var(--on-highlight); }
+
+.atm-tag { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-sans); font-size: 13px; font-weight: 500; padding: 4px var(--space-3); border-radius: var(--radius-sm); background: var(--surface-raised); color: var(--ink); border: 1px solid var(--border-strong); }
+.atm-tag button { border: none; background: none; cursor: pointer; color: var(--ink-muted); display: inline-flex; padding: 0; }
+.atm-tag button:hover { color: var(--accent); }
+
+.atm-pill { display: inline-flex; align-items: center; gap: var(--space-2); font-family: var(--font-sans); font-weight: 600; font-size: 12px; letter-spacing: 0.02em; padding: 4px var(--space-3) 4px var(--space-2); border-radius: var(--radius-pill); }
+.atm-pill .atm-dot { width: 8px; height: 8px; border-radius: var(--radius-pill); flex: none; }
+.atm-pill--success { background: var(--success-soft); color: var(--success); } .atm-pill--success .atm-dot { background: var(--success); }
+.atm-pill--warning { background: var(--warning-soft); color: var(--on-warning); } .atm-pill--warning .atm-dot { background: var(--warning); }
+.atm-pill--error { background: var(--error-soft); color: var(--error); } .atm-pill--error .atm-dot { background: var(--error); }
+.atm-pill--info { background: var(--info-soft); color: var(--info); } .atm-pill--info .atm-dot { background: var(--info); }
+.atm-pill--neutral { background: var(--surface-sunken); color: var(--ink-secondary); } .atm-pill--neutral .atm-dot { background: var(--ink-muted); }
+
+/* Avatar */
+.atm-avatar { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius-pill); background: var(--primary-soft); color: var(--primary); font-family: var(--font-sans); font-weight: 600; border: 1px solid var(--border-strong); overflow: hidden; }
+.atm-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.atm-avatar--sm { width: 32px; height: 32px; font-size: 13px; }
+.atm-avatar--lg { width: 64px; height: 64px; font-size: 22px; }
+.atm-avatar-stack { display: inline-flex; }
+.atm-avatar-stack .atm-avatar { margin-left: -10px; box-shadow: 0 0 0 2px var(--surface); }
+.atm-avatar-stack .atm-avatar:first-child { margin-left: 0; }
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.atm-card { background: var(--surface-raised); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: var(--space-5); color: var(--ink); }
+.atm-card--flat { box-shadow: none; }
+.atm-card--pop { transition: transform var(--atm-dur-2) var(--atm-ease), box-shadow var(--atm-dur-2) var(--atm-ease); }
+.atm-card--pop:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-pop); }
+.atm-card__eyebrow { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.16em; font-weight: 600; font-size: 12px; color: var(--accent); margin: 0 0 var(--space-2); }
+.atm-card__title { font-family: var(--font-display); font-weight: 600; font-size: 20px; line-height: 28px; margin: 0 0 var(--space-2); }
+.atm-card__body { font-size: 15px; line-height: 23px; color: var(--ink-secondary); margin: 0; }
+
+.atm-feature { position: relative; overflow: hidden; }
+.atm-feature__icon { width: 48px; height: 48px; border-radius: var(--radius-pill); display: inline-flex; align-items: center; justify-content: center; background: var(--primary-soft); color: var(--primary); border: 1px solid var(--border-strong); margin-bottom: var(--space-4); }
+.atm-feature__icon svg { width: 24px; height: 24px; }
+
+/* Editorial card */
+.atm-editorial { display: grid; grid-template-columns: 1fr; overflow: hidden; padding: 0; }
+.atm-editorial__media { aspect-ratio: 16 / 10; background: var(--surface-inverse); position: relative; }
+.atm-editorial__body { padding: var(--space-5); }
+.atm-editorial__kicker { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; font-weight: 600; color: var(--accent); }
+.atm-editorial__headline { font-family: var(--font-display); font-size: 22px; line-height: 27px; font-weight: 600; margin: var(--space-2) 0; }
+.atm-editorial__meta { font-size: 13px; color: var(--ink-muted); display: flex; gap: var(--space-3); align-items: center; }
+
+/* Stat card */
+.atm-stat { border-radius: var(--radius-lg); }
+.atm-stat__label { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; font-weight: 600; color: var(--ink-muted); margin: 0; }
+.atm-stat__value { font-family: var(--font-display); font-size: 44px; line-height: 1; font-weight: 600; color: var(--ink); margin: var(--space-3) 0 var(--space-2); font-variant-numeric: tabular-nums; }
+.atm-stat__delta { display: inline-flex; align-items: center; gap: var(--space-1); font-family: var(--font-sans); font-weight: 600; font-size: 12px; }
+.atm-stat__delta--up { color: var(--success); }
+.atm-stat__delta--down { color: var(--error); }
+
+/* Pricing card */
+.atm-price { display: flex; flex-direction: column; gap: var(--space-4); }
+.atm-price--featured { background: var(--surface-inverse); color: var(--ink-on-inverse); border-color: var(--border-strong); }
+.atm-price--featured .atm-price__amt, .atm-price--featured .atm-price__name { color: var(--ink-on-inverse); }
+.atm-price--featured .atm-price__feat { color: var(--ink-on-inverse); }
+.atm-price__name { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em; font-size: 12px; font-weight: 600; color: var(--accent); }
+.atm-price__amt { font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1; }
+.atm-price__amt sub { font-size: 15px; font-family: var(--font-body); color: var(--ink-muted); vertical-align: baseline; }
+.atm-price__feat { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-3); font-size: 15px; }
+.atm-price__feat li { display: flex; gap: var(--space-3); align-items: flex-start; }
+.atm-price__feat svg { flex: none; width: 18px; height: 18px; color: var(--primary); margin-top: 3px; }
+.atm-price--featured .atm-price__feat svg { color: var(--highlight); }
+
+/* Testimonial */
+.atm-quote { position: relative; }
+.atm-quote__mark { font-family: var(--font-display); font-size: 64px; line-height: 0.6; color: var(--accent); display: block; height: 34px; }
+.atm-quote__text { font-family: var(--font-display); font-style: italic; font-size: 22px; line-height: 30px; color: var(--ink); margin: var(--space-3) 0 var(--space-5); }
+.atm-quote__who { display: flex; align-items: center; gap: var(--space-3); }
+.atm-quote__name { font-weight: 600; font-size: 15px; }
+.atm-quote__role { font-size: 13px; color: var(--ink-muted); }
+
+/* Profile card */
+.atm-profile { text-align: center; }
+.atm-profile__name { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: var(--space-3) 0 2px; }
+.atm-profile__role { font-family: var(--font-sans); font-size: 13px; letter-spacing: 0.04em; color: var(--ink-muted); }
+
+/* Job card */
+.atm-job { display: flex; flex-direction: column; gap: var(--space-3); }
+.atm-job__top { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); }
+.atm-job__title { font-family: var(--font-display); font-size: 19px; font-weight: 600; margin: 0; }
+.atm-job__co { font-size: 14px; color: var(--ink-secondary); }
+.atm-job__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+/* Notification card */
+.atm-notif { display: flex; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-md); background: var(--surface-raised); border: 1px solid var(--border); }
+.atm-notif--unread { border-color: var(--border-strong); background: var(--primary-soft); }
+.atm-notif__body { flex: 1; font-size: 14px; line-height: 20px; }
+.atm-notif__time { font-size: 12px; color: var(--ink-muted); }
+
+/* ============================================================
+   FEEDBACK
+   ============================================================ */
+.atm-alert { display: flex; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid; align-items: flex-start; }
+.atm-alert svg.atm-alert__icon { flex: none; width: 20px; height: 20px; margin-top: 1px; }
+.atm-alert__title { font-weight: 600; font-family: var(--font-sans); letter-spacing: 0.02em; margin: 0 0 2px; }
+.atm-alert__msg { font-size: 14px; line-height: 20px; margin: 0; color: var(--ink-secondary); }
+.atm-alert--info { background: var(--info-soft); border-color: var(--info); } .atm-alert--info .atm-alert__icon { color: var(--info); }
+.atm-alert--success { background: var(--success-soft); border-color: var(--success); } .atm-alert--success .atm-alert__icon { color: var(--success); }
+.atm-alert--warning { background: var(--warning-soft); border-color: var(--warning); } .atm-alert--warning .atm-alert__icon { color: var(--on-warning); }
+.atm-alert--error { background: var(--error-soft); border-color: var(--error); } .atm-alert--error .atm-alert__icon { color: var(--error); }
+
+.atm-banner { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-5); background: var(--surface-inverse); color: var(--ink-on-inverse); }
+.atm-banner a, .atm-banner .atm-link { color: var(--highlight); }
+
+.atm-toast { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-3) var(--space-4); background: var(--ink); color: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); max-width: 380px; }
+.atm-toast svg { flex: none; width: 18px; height: 18px; color: var(--highlight); }
+.atm-toast__msg { font-size: 14px; flex: 1; }
+
+/* Modal */
+.atm-scrim { position: absolute; inset: 0; background: var(--surface-inverse); opacity: var(--opacity-scrim); }
+.atm-modal { position: relative; background: var(--surface-raised); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); max-width: 480px; width: 100%; padding: var(--space-6); }
+.atm-modal__title { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin: 0 0 var(--space-3); }
+.atm-modal__body { font-size: 15px; line-height: 23px; color: var(--ink-secondary); margin: 0 0 var(--space-5); }
+.atm-modal__actions { display: flex; gap: var(--space-3); justify-content: flex-end; }
+.atm-modal__close { position: absolute; top: var(--space-4); right: var(--space-4); }
+
+/* Tooltip */
+.atm-tooltip { position: relative; display: inline-block; }
+.atm-tooltip__bubble { background: var(--ink); color: var(--surface); font-size: 13px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); box-shadow: var(--shadow-md); white-space: nowrap; }
+.atm-tooltip__bubble::after { content: ""; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; background: var(--ink); transform: translateX(-50%) rotate(45deg); }
+
+/* Progress */
+.atm-progress { height: 10px; background: var(--surface-sunken); border-radius: var(--radius-pill); border: 1px solid var(--border-strong); overflow: hidden; }
+.atm-progress__bar { height: 100%; background: var(--primary); border-radius: var(--radius-pill); transition: width var(--atm-dur-3) var(--atm-ease-mech); }
+.atm-progress--accent .atm-progress__bar { background: var(--accent); }
+
+.atm-spinner { width: 28px; height: 28px; }
+.atm-spinner circle { fill: none; stroke: var(--border); stroke-width: 3; }
+.atm-spinner .atm-spinner__arc { stroke: var(--primary); stroke-linecap: round; stroke-dasharray: 44 100; transform-origin: center; animation: atm-orbit 900ms linear infinite; }
+
+/* Empty state */
+.atm-empty { text-align: center; padding: var(--space-9) var(--space-5); }
+.atm-empty__art { margin: 0 auto var(--space-5); width: 96px; height: 96px; }
+.atm-empty__title { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: 0 0 var(--space-2); }
+.atm-empty__msg { font-size: 15px; color: var(--ink-muted); max-width: 320px; margin: 0 auto var(--space-5); }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.atm-topnav { display: flex; align-items: center; gap: var(--space-6); padding: var(--space-3) var(--space-6); background: var(--surface-raised); border-bottom: 1px solid var(--border-strong); }
+.atm-topnav__brand { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; display: flex; align-items: center; gap: var(--space-2); }
+.atm-topnav__links { display: flex; gap: var(--space-5); flex: 1; }
+.atm-topnav__link { font-family: var(--font-sans); font-size: 14px; letter-spacing: 0.04em; font-weight: 500; color: var(--ink-secondary); text-decoration: none; padding: var(--space-2) 0; position: relative; }
+.atm-topnav__link:hover { color: var(--ink); }
+.atm-topnav__link.is-active { color: var(--ink); }
+.atm-topnav__link.is-active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px; background: var(--accent); border-radius: var(--radius-pill); }
+
+.atm-tabs { display: flex; gap: var(--space-1); border-bottom: 1px solid var(--border); }
+.atm-tab { font-family: var(--font-sans); font-size: 14px; letter-spacing: 0.04em; font-weight: 600; color: var(--ink-muted); background: none; border: none; padding: var(--space-3) var(--space-4); cursor: pointer; position: relative; }
+.atm-tab:hover { color: var(--ink); }
+.atm-tab.is-active { color: var(--ink); }
+.atm-tab.is-active::after { content: ""; position: absolute; left: var(--space-3); right: var(--space-3); bottom: -1.5px; height: 3px; background: var(--accent); border-radius: var(--radius-pill); }
+
+.atm-crumbs { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-sans); font-size: 13px; letter-spacing: 0.02em; color: var(--ink-muted); flex-wrap: wrap; }
+.atm-crumbs a { color: var(--ink-secondary); text-decoration: none; }
+.atm-crumbs a:hover { color: var(--primary); }
+.atm-crumbs__sep { color: var(--border-control); }
+
+.atm-pagination { display: inline-flex; align-items: center; gap: var(--space-1); }
+.atm-page { min-width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); font-family: var(--font-sans); font-weight: 600; font-size: 14px; color: var(--ink-secondary); background: none; border: 1px solid transparent; cursor: pointer; }
+.atm-page:hover { background: var(--surface-sunken); color: var(--ink); }
+.atm-page.is-active { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+
+/* ============================================================
+   DATA
+   ============================================================ */
+.atm-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.atm-table thead th { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.08em; font-size: 11px; font-weight: 600; color: var(--ink-muted); text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-strong); }
+.atm-table tbody td { padding: var(--space-4); border-bottom: 1px solid var(--hairline); color: var(--ink); }
+.atm-table tbody tr:hover { background: var(--surface-sunken); }
+.atm-table--zebra tbody tr:nth-child(even) { background: var(--surface-sunken); }
+.atm-table td.num, .atm-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.atm-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border-strong); border-radius: var(--radius-md); overflow: hidden; }
+.atm-list li { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4); border-bottom: 1px solid var(--hairline); }
+.atm-list li:last-child { border-bottom: none; }
+.atm-list li:hover { background: var(--surface-sunken); }
+
+.atm-metric { display: flex; align-items: baseline; gap: var(--space-2); }
+.atm-metric__num { font-family: var(--font-display); font-size: 28px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.atm-metric__unit { font-size: 14px; color: var(--ink-muted); }
+
+.atm-chart { background: var(--surface-raised); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: var(--space-5); }
+.atm-chart__head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4); }
+.atm-chart__title { font-family: var(--font-display); font-size: 18px; font-weight: 600; margin: 0; }
+.atm-legend { display: flex; flex-wrap: wrap; gap: var(--space-4); font-size: 12px; color: var(--ink-secondary); }
+.atm-legend span { display: inline-flex; align-items: center; gap: var(--space-2); }
+.atm-legend i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+
+/* ============================================================
+   LAYOUT & SURFACE
+   ============================================================ */
+.atm-container { max-width: 1200px; margin: 0 auto; padding-left: var(--space-6); padding-right: var(--space-6); }
+.atm-grid { display: grid; gap: var(--space-6); grid-template-columns: repeat(12, 1fr); }
+.atm-row { display: flex; align-items: center; gap: var(--space-3); }
+.atm-section { padding: var(--space-10) 0; }
+
+/* ============================================================
+   RHYTHM & DENSITY  — space encodes relationship
+   The proximity ladder: within-control (space-2) < within-group
+   (space-4) < between-groups (space-6) < between-sections (space-8).
+   Each rung is visibly larger than the one nested inside it, so the
+   eye chunks the panel without needing boxes or lines everywhere.
+   ============================================================ */
+.atm-stack { display: flex; flex-direction: column; gap: var(--space-4); }   /* within a group */
+.atm-stack--xtight  { gap: var(--space-1); }
+.atm-stack--tight   { gap: var(--space-2); }   /* label <-> control */
+.atm-stack--group   { gap: var(--space-6); }   /* group <-> group */
+.atm-stack--section { gap: var(--space-8); }   /* section <-> section */
+
+/* Side panel / settings column: sections spaced on the top rung */
+.atm-panel { background: var(--surface-raised); padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-6); }
+.atm-panel__section { display: flex; flex-direction: column; gap: var(--space-3); }
+/* Ruled variant: a single hairline between major sections, nothing inside them */
+.atm-panel--ruled { gap: 0; }
+.atm-panel--ruled .atm-panel__section { padding: var(--space-4) 0; }
+.atm-panel--ruled .atm-panel__section:first-child { padding-top: 0; }
+.atm-panel--ruled .atm-panel__section + .atm-panel__section { border-top: 1px solid var(--hairline); }
+
+/* Section anchor: a quiet uppercase label set apart from the rows below it */
+.atm-section-label { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: 12px; color: var(--ink-muted); margin: 0; }
+.atm-divider { height: 1px; background: var(--hairline); border: 0; margin: 0; }
+
+/* A field group stacks fields on the group rung; each field keeps label tight to control */
+.atm-field-group { display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* Menu / list rows: one alignment rail, a fixed row rhythm, one nesting step */
+.atm-menu { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.atm-menu__row { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-2); border-radius: var(--radius-sm); }
+.atm-menu__row:hover { background: var(--surface-sunken); }
+.atm-menu__row--nested { padding-left: var(--space-8); }   /* the single indent step */
+.atm-menu__label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.atm-menu__meta { color: var(--ink-muted); font-size: 13px; flex: none; }
+
+/* Paper grain + halftone (subtle) */
+.atm-paper { position: relative; }
+.atm-paper::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: var(--opacity-texture);
+  background-image: radial-gradient(var(--ink) 0.5px, transparent 0.5px);
+  background-size: 4px 4px; mix-blend-mode: multiply;
+}
+.atm-halftone { background-image: radial-gradient(var(--ink) 1.2px, transparent 1.4px); background-size: 8px 8px; opacity: var(--opacity-muted); }
+
+/* ============================================================
+   MOTIFS — geometry primitives
+   ============================================================ */
+.atm-motif { display: inline-block; color: var(--accent); }
+.atm-orbit { animation: atm-spin 24s linear infinite; transform-origin: center; }
+.atm-radar { animation: atm-spin 4s linear infinite; transform-origin: center; }
+.atm-spark { animation: atm-twinkle 3s ease-in-out infinite; transform-origin: center; }
+.atm-ticker { display: flex; overflow: hidden; white-space: nowrap; }
+.atm-ticker__track { display: inline-flex; gap: var(--space-8); animation: atm-slide 24s linear infinite; }
+
+/* ============================================================
+   MOTION LANGUAGE  (Impeccable pass — Animate)
+   Motion is mechanical and orbital. Ambient loops stay slow and rare;
+   the loud moments answer a user action or play once on load.
+   ============================================================ */
+@keyframes atm-spin    { to { transform: rotate(360deg); } }
+@keyframes atm-orbit   { to { transform: rotate(360deg); } }
+@keyframes atm-twinkle { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.82); } }
+@keyframes atm-slide   { to { transform: translateX(-50%); } }
+@keyframes atm-rise    { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes atm-pop-in  { 0% { opacity: 0; transform: scale(.94) translateY(6px); } 60% { transform: scale(1.01); } 100% { opacity: 1; transform: none; } }
+@keyframes atm-fade    { from { opacity: 0; } to { opacity: 1; } }
+@keyframes atm-draw    { to { stroke-dashoffset: 0; } }
+@keyframes atm-sweep   { to { transform: rotate(360deg); } }
+@keyframes atm-check   { from { stroke-dashoffset: 26; } to { stroke-dashoffset: 0; } }
+@keyframes atm-sparkle { 0% { opacity: 0; transform: scale(.2) rotate(0deg); } 40% { opacity: 1; } 100% { opacity: 0; transform: scale(1.15) rotate(45deg); } }
+@keyframes atm-underline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes atm-pulse-ring { 0% { transform: scale(.7); opacity: .5; } 100% { transform: scale(1.9); opacity: 0; } }
+
+/* Entrance utilities (user-triggered or the single load moment) */
+.atm-rise    { animation: atm-rise var(--atm-dur-3) var(--atm-ease) both; }
+.atm-pop-in  { animation: atm-pop-in var(--atm-dur-2) var(--atm-ease) both; }
+.atm-fade-in { animation: atm-fade var(--atm-dur-2) var(--atm-ease) both; }
+
+/* SVG line-draw: add pathLength="1" to the drawn shape, then this class */
+.atm-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: atm-draw 1.1s var(--atm-ease) forwards; }
+
+/* ONE orchestrated load moment for a hero. Put .atm-boot on the section;
+   number the reveals with .atm-boot__1..4 (staggered), draw orbit rings
+   with .atm-draw. Plays once — not a per-section fade parade. */
+.atm-boot .atm-boot__1 { animation: atm-rise 520ms var(--atm-ease) 60ms both; }
+.atm-boot .atm-boot__2 { animation: atm-rise 520ms var(--atm-ease) 160ms both; }
+.atm-boot .atm-boot__3 { animation: atm-rise 520ms var(--atm-ease) 260ms both; }
+.atm-boot .atm-boot__4 { animation: atm-pop-in 460ms var(--atm-ease) 360ms both; }
+
+/* ---- Micro-interactions on user actions ---- */
+.atm-tab.is-active::after { transform-origin: left center; animation: atm-underline var(--atm-dur-2) var(--atm-ease); }
+.atm-check input:checked + .atm-box svg path { stroke-dasharray: 26; animation: atm-check var(--atm-dur-2) var(--atm-ease-mech) forwards; }
+[data-atm-modal]:not([hidden]) .atm-scrim { animation: atm-fade var(--atm-dur-2) var(--atm-ease) both; }
+[data-atm-modal]:not([hidden]) .atm-modal { animation: atm-pop-in var(--atm-dur-2) var(--atm-ease) both; }
+
+/* ============================================================
+   DELIGHT  (Impeccable pass — one place for whimsy)
+   ============================================================ */
+/* Feature icon tips like a satellite on hover */
+.atm-feature { transition: transform var(--atm-dur-2) var(--atm-ease); }
+.atm-feature__icon { transition: transform var(--atm-dur-2) var(--atm-ease-mech); }
+.atm-card--pop.atm-feature:hover .atm-feature__icon { transform: rotate(-10deg) scale(1.06); }
+
+/* Liftoff FAB: lifts with a faint exhaust ring */
+.atm-fab { position: relative; }
+.atm-fab::after { content: ""; position: absolute; inset: -4px; border-radius: var(--radius-pill); border: 2px solid var(--accent); opacity: 0; }
+.atm-fab:hover::after { animation: atm-pulse-ring 700ms var(--atm-ease) 1; }
+
+/* Orbital loader (indeterminate) + radar sweep variant */
+.atm-loader { width: 40px; height: 40px; }
+.atm-loader .ring { fill: none; stroke: var(--border); stroke-width: 2; }
+.atm-loader .planet { fill: var(--accent); }
+.atm-loader .moon { fill: var(--highlight); animation: atm-orbit 1200ms linear infinite; transform-origin: center; }
+.atm-radar-svg .beam { transform-origin: center; animation: atm-sweep 2.4s linear infinite; }
+
+/* Sparkle burst (JS-spawned bits ride this) */
+.atm-sparkle-host { position: relative; }
+.atm-spark-bit { position: absolute; width: 12px; height: 12px; color: var(--highlight); pointer-events: none; animation: atm-sparkle 620ms var(--atm-ease) forwards; }
+
+/* ============================================================
+   HARDEN  (Impeccable pass — utilities & resilient states)
+   ============================================================ */
+.atm-sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.atm-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.atm-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.atm-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.atm-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.atm-scroll-lock { overflow: hidden !important; }
+.atm-btn, .atm-iconbtn, .atm-tab, .atm-page { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+/* RTL: flip the directional glyphs */
+[dir="rtl"] .atm-select-wrap::after { right: auto; left: 18px; }
+[dir="rtl"] .atm-search .atm-input { padding-left: var(--space-4); padding-right: var(--space-8); }
+[dir="rtl"] .atm-search svg { left: auto; right: 16px; }
+
+/* prefers-contrast: strengthen the printed outlines */
+@media (prefers-contrast: more) {
+  .atm-card, .atm-input, .atm-textarea, .atm-select, .atm-badge, .atm-tag, .atm-pill, .atm-alert { border-width: 2px; }
+  .atm-topnav__link.is-active::after, .atm-tab.is-active::after { height: 4px; }
+}
+
+/* Windows High Contrast / forced-colors: honor system colors */
+@media (forced-colors: active) {
+  .atm-btn, .atm-iconbtn, .atm-input, .atm-textarea, .atm-select, .atm-card, .atm-modal, .atm-pill, .atm-badge, .atm-tag { border: 1px solid ButtonText; }
+  .atm-btn { forced-color-adjust: none; background: ButtonFace; color: ButtonText; }
+  .atm-root :focus-visible, [class^="atm-"]:focus-visible, [class*=" atm-"]:focus-visible { outline: 2px solid Highlight; outline-offset: 2px; box-shadow: none; }
+  .atm-pill .atm-dot { forced-color-adjust: none; }
+}
+
+/* Print: drop chrome and decoration, ink on paper */
+@media print {
+  .atm-topnav, .atm-fab, .atm-banner, .atm-toast, #atm-toast-host, .atm-orbit, .atm-radar, [data-atm-modal] { display: none !important; }
+  .atm-card, .atm-input, .atm-table { box-shadow: none !important; }
+  .atm-scope, .atm-root { background: #fff !important; color: #000 !important; }
+}
+
+/* ============================================================
+   REDUCED MOTION — the last word. Stop ambient and orchestrated
+   motion; keep final states legible. (Impeccable pass — Harden)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .atm-draw { stroke-dashoffset: 0 !important; }
+  .atm-check input:checked + .atm-box svg path { stroke-dashoffset: 0 !important; }
+  .atm-spark-bit { display: none !important; }
+}

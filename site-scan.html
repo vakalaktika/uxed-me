@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspect Tool — 3DR SiteScan App Feature — Ed Guillen</title>
+<meta name="description" content="The Site Scan tools enable the user to safely perform previously difficult tasks that required advanced knowledge of flying a UAV.">
+<link rel="canonical" href="https://www.uxed.me/site-scan">
+<link rel="stylesheet" href="/assets/atomic-age/tokens.css">
+<link rel="stylesheet" href="/assets/atomic-age/bundle.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="atm-scope">
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<nav class="atm-topnav">
+  <a class="atm-topnav__brand" href="/"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg> Ed Guillen</a>
+  <div class="atm-topnav__links"><a class="atm-topnav__link is-active" href="/" aria-current="page">Work</a><a class="atm-topnav__link" href="/resume">Resume</a><a class="atm-topnav__link" href="/about">About</a></div>
+  <a class="atm-btn atm-btn--sm atm-btn--secondary" href="/contact">Contact</a>
+  <button class="atm-iconbtn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-sheet" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>
+<div class="nav-sheet" id="nav-sheet" data-nav-sheet hidden>
+  <div class="nav-sheet__top">
+    <a class="atm-topnav__brand" href="/"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg> Ed Guillen</a>
+    <button class="atm-iconbtn" data-nav-close aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="nav-sheet__links">
+    <a href="/">Work</a>
+    <a href="/resume">Resume</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+</div></header>
+<main id="main">
+
+<div class="atm-container article-header">
+  <p class="atm-eyebrow">SiteScan app · Feature design</p>
+  <h1>Site Scan — Inspect tool</h1>
+  <p class="t-body-lg lede" style="color:var(--ink-secondary)">Keeping inspectors safe on the ground.</p>
+  <dl class="meta-panel">
+    <div><dt>My role</dt><dd>Flows, wireframes, concepts, prototypes and interaction specifications, working closely with developers and flight engineers on implementation</dd></div>
+  </dl>
+</div>
+<div class="atm-container">
+  <figure class="hero-figure">
+    <img src="/assets/img/site-scan/14604039-vju5465jssoo3i19sek1-image-asset.webp" width="1600" height="488" alt="Site Scan inspect tool interface" loading="eager">
+  </figure>
+</div>
+
+<div class="atm-container">
+  <div class="prose">
+    <p class="t-body-lg" style="color:var(--ink-secondary)">The Site Scan tools enable the user to safely perform previously difficult tasks that required advanced knowledge of flying a UAV.</p>
+
+    <h2>About the inspect tool</h2>
+    <p>The Inspect tool lets users easily and safely maneuver the copter for close-up inspections of hard-to-access areas, like the top of a cell tower or the side of a high-rise. It does this through paradigms users already know: zoom in/out, drag the map to select a destination, pan to look around, tap to center a point of interest.</p>
+
+    <h2>Why an inspection tool</h2>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604114-pb2l5snxyqvmwmuznr8f-image-asset.webp" width="600" height="600" alt="Cell tower inspection scenario" loading="lazy">
+    </figure>
+    <p>Climbing to inspect large or tall structures is challenging and dangerous — an inspector might climb up to 200ft to assess a faulty cell tower, then have to move around the structure if the damage is on the far side, then climb a second time to fix it. That takes time and puts the inspector’s life at risk with every climb.</p>
+    <p>Enter the Inspect tool: the inspector flies a drone to and around the cell tower, getting as close as safely possible with a few taps and swipes, taking pictures from as many points of view as needed. Quick, safe, reliable.</p>
+
+    <h2>The challenge</h2>
+    <p>We needed a tool that was easy to learn and free of frustrating pain points — this would be used many times a day — and, most importantly, gave users the feedback they needed to safely maneuver the copter in space.</p>
+
+    <h2>Selecting altitude and destination</h2>
+    <h3>First iteration</h3>
+    <p>In the first iteration, tapping the screen selected a destination and previewed the copter’s path; long-pressing the destination started the flight, and the user could pause at any point to pick a new destination. Users could also adjust altitude to fine-tune visibility of the object being inspected, then return to full first-person view to take pictures.</p>
+    <div class="hub-grid" style="margin:var(--space-8) 0">
+      <figure style="margin:0"><img src="/assets/img/site-scan/14603966-agaqdf508lmgexrqx28u-image-asset.webp" width="1256" height="942" alt="User can tap anywhere on the map to select a destination" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/site-scan/14603968-gqrfwbnrd0r9lcykl9j4-image-asset.webp" width="1258" height="942" alt="User is directed to long-press the destination to travel" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/site-scan/14603968-bu27teff9yh74f3bvi1s-image-asset.webp" width="1264" height="946" alt="User has selected a destination and a path is drawn" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/site-scan/14603966-7eos08o5lucbwpx5pwz4-image-asset.webp" width="1258" height="944" alt="Vehicle begins travel; the user can pause to select a new destination" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/site-scan/14603992-x5m1v1jpi1gez3sdlncb-image-asset.webp" width="1260" height="944" alt="Map overview with picture-in-picture first-person view" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/site-scan/14603992-q4mj293hsyia0cqp661b-image-asset.webp" width="1256" height="946" alt="User can toggle to first-person view while keeping visibility of the map" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+    </div>
+    <p>During user testing we quickly learned this wasn’t very intuitive — users had trouble selecting a destination because their finger obstructed it. Of 40 users interviewed, 80% reported this issue, 15% were indifferent, and 5% liked the select-destination paradigm.</p>
+
+    <h3>Final implementation</h3>
+    <p>Taking note from user testing, the new approach eliminated the pain points users encountered:</p>
+    <ul>
+      <li>A more intuitive altitude bar with a better readout of the copter’s behavior</li>
+      <li>A more familiar destination selector that gives visibility of the desired point of interest</li>
+      <li>Added fine-tuning controls for better first-person-view inspection adjustments</li>
+    </ul>
+
+    <h3>Adjusting altitude</h3>
+    <p>The altitude bar was redesigned for more control and a better feedback loop of the copter’s behavior. The biggest change was a current-altitude indicator that visually showed whether the copter was ascending or descending.</p>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604156-swbk2syuxknorkr7xogm-image-asset.webp" width="288" height="400" alt="Old altitude bar" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604156-qgpxl4xrndc2uplw6tou-image-asset.webp" width="288" height="400" alt="New altitude bar" loading="lazy">
+    </figure>
+
+    <h3>Destination selector</h3>
+    <p>The new destination selector has users drag the map instead of tapping a point, to select the point-of-interest area they want the copter to fly toward — which also let them choose a new destination mid-flight, for example to route around an unexpected obstacle like a crane.</p>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604183-bssr2pmi7mahmwb65lm8-image-asset.webp" width="1370" height="856" alt="User is instructed to drag the map to select a destination" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604182-va3czihnesepafmqlsoo-image-asset.webp" width="1370" height="856" alt="Dragging the map shows a reticle and a connecting line indicating the intended travel path" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604177-gcwog4nbgmwyz6t1hkc0-image-asset.webp" width="1370" height="856" alt="Pressing Travel starts the copter’s trajectory; the destination can be changed by dragging and pressing Travel again" loading="lazy">
+    </figure>
+
+    <h3>Fine-tuning controls and FPV</h3>
+    <p>Judging distance between two objects from far away is difficult even for skilled pilots, let alone a novice — and inspecting a structure can be hard from the ground. Fine-tuning controls help users get as close as they need to the structure safely, moving the copter forward, back, and to the sides in 1ft increments — the increment that felt safest to most users after extensive testing. Long-pressing a direction moves the copter incrementally at a slow, safe speed.</p>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604191-lejt88ib78316yxkm0sk-image-asset.webp" width="1370" height="856" alt="Fine-tuning inspection controls, resting state" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604191-kzfwvsy480oyrnkzi7yy-image-asset.webp" width="810" height="310" alt="Fine-tuning inspection controls, active state" loading="lazy">
+    </figure>
+    <p>Quickly switching between the map and FPV views matters a lot, especially when inspecting multiple structures or objects in a single flight.</p>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604198-m1wybo4kspu6nfu2jsjd-image-asset.webp" width="1370" height="856" alt="Full FPV view: maximum visibility from the copter’s perspective" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604208-zelik51hvuqbzsrvq2ng-image-asset.webp" width="1370" height="856" alt="Split-screen view: navigation control and copter perspective, the default view" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/site-scan/14604208-d5qqikirm4r441k5jxgi-image-asset.webp" width="1370" height="856" alt="Map view: maximum navigation control from a top-down view" loading="lazy">
+    </figure>
+    <p>This round of changes greatly improved the feature: 95% of users reported feeling happier and safer flying, and new users felt more confident on their first flight.</p>
+  </div>
+</div>
+<div class="atm-container">
+  <div class="article-nav">
+    <a class="atm-link t-body-sm" href="/">← All work</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="atm-container">
+    <p class="t-body-sm" style="color:var(--ink-muted)">&copy; 2026 Ed Guillen. Built with the Atomic Age design system.</p>
+    <a class="atm-link t-body-sm" href="https://www.instagram.com/edmakesbread/" style="color:var(--ink-muted)">@edmakesbread</a>
+  </div>
+</footer>
+<script src="/assets/atomic-age/bundle.js"></script>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

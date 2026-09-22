@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multipoint Cable-cam — 3DR Solo App Feature — Ed Guillen</title>
+<meta name="description" content="Multipoint cable-cam for 3DR's Solo lets users set unlimited keyframes in the air to create amazing cinematic shots without worrying about piloting the copter.">
+<link rel="canonical" href="https://www.uxed.me/multipoint">
+<link rel="stylesheet" href="/assets/atomic-age/tokens.css">
+<link rel="stylesheet" href="/assets/atomic-age/bundle.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="atm-scope">
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<nav class="atm-topnav">
+  <a class="atm-topnav__brand" href="/"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg> Ed Guillen</a>
+  <div class="atm-topnav__links"><a class="atm-topnav__link is-active" href="/" aria-current="page">Work</a><a class="atm-topnav__link" href="/resume">Resume</a><a class="atm-topnav__link" href="/about">About</a></div>
+  <a class="atm-btn atm-btn--sm atm-btn--secondary" href="/contact">Contact</a>
+  <button class="atm-iconbtn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-sheet" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</nav>
+<div class="nav-sheet" id="nav-sheet" data-nav-sheet hidden>
+  <div class="nav-sheet__top">
+    <a class="atm-topnav__brand" href="/"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg> Ed Guillen</a>
+    <button class="atm-iconbtn" data-nav-close aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="nav-sheet__links">
+    <a href="/">Work</a>
+    <a href="/resume">Resume</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+</div></header>
+<main id="main">
+
+<div class="atm-container article-header">
+  <p class="atm-eyebrow">3DR Solo app · Feature design</p>
+  <h1>Multipoint cablecam</h1>
+  <p class="t-body-lg lede" style="color:var(--ink-secondary)">Focus on framing, not flying.</p>
+  <dl class="meta-panel">
+    <div><dt>My role</dt><dd>Lead designer — flows, wireframes, concepts, prototypes and interaction specifications, working closely with developers and flight engineers on implementation</dd></div>
+  </dl>
+</div>
+<div class="atm-container">
+  <figure class="hero-figure">
+    <img src="/assets/img/multipoint/14592828-2j8ezu4kfbu7yy8vghq6-image-asset.webp" width="1587" height="400" alt="Multipoint cablecam feature in the 3DR Solo app" loading="eager">
+  </figure>
+</div>
+
+<div class="atm-container">
+  <div class="prose">
+    <h2>About multipoint cablecam</h2>
+    <p>Multipoint cablecam for 3DR’s Solo lets users set unlimited keyframes in the air to create cinematic shots, without worrying about piloting the copter, by remembering and smoothing the path between them.</p>
+
+    <h2>Sketches and designs</h2>
+    <p>The first iteration let users tap to add waypoints, with the camera pointing at a fixed angle on each keyframe. That was limiting — users could only think in the X/Y axis, with no reference for what they were actually shooting.</p>
+    <div class="hub-grid" style="margin:var(--space-8) 0">
+      <figure style="margin:0"><img src="/assets/img/multipoint/14592896-uud1xca916vunyre5wfj-image-asset.webp" width="1600" height="1200" alt="First iteration: setting waypoints on the X/Y axis" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/multipoint/14592901-zd2py4xrofyeo3unougn-image-asset.webp" width="1600" height="1014" alt="First iteration, alternate waypoint state" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/multipoint/14592899-2o7gx4tp8628xa4zbqhh-image-asset.webp" width="1600" height="468" alt="First iteration, waypoint path preview" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+    </div>
+    <p>Further user research showed that users think in camera framing, not points in space — their intent was to capture a specific frame from an angle, whether a photo or a video sequence. For the final implementation, users fly to the framing they want and create a keyframe there, saving the X, Y, Z position and camera angle.</p>
+    <div class="hub-grid" style="margin:var(--space-8) 0">
+      <figure style="margin:0"><img src="/assets/img/multipoint/14592917-2momstxgp9xwp2bmmeg9-multipoint-cable-cam-01.webp" width="1138" height="640" alt="Set first point" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/multipoint/14592917-w4haef6ug8b09a9i2i93-image-asset.webp" width="1138" height="640" alt="Set another point" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/multipoint/14592918-ah7lfmoa9dkbud7fgssb-image-asset.webp" width="1138" height="640" alt="Set last point" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+      <figure style="margin:0"><img src="/assets/img/multipoint/14592918-w48r30ypu6a2up23jjz2-image-asset.webp" width="1137" height="641" alt="Final path" loading="lazy" style="border-radius:var(--radius-md);border:1.5px solid var(--border-strong)"></figure>
+    </div>
+    <p>Once keyframes were set, moving between them had to be simple and intuitive, and it was critical to communicate where the copter was relative to the next keyframe — especially when filming a choreographed sequence.</p>
+    <figure class="">
+      <img src="/assets/img/multipoint/14592834-ms31pkwzcibm4uufwsu0-image-asset.webp" width="1600" height="1200" alt="Paper sketch" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/multipoint/14592834-pjq3aytko63txzv3nvct-screen-shot-2016-03-29-at-1-30-08-pm.webp" width="910" height="622" alt="Controls concept" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/multipoint/14592850-kfxjhx21yckjnxgvltqz-multipoint-cable-cam-interaction-keys.webp" width="714" height="931" alt="Interaction concept" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/multipoint/14592862-y4s1zvp1bbmw6u1ar9tp-image-asset.webp" width="529" height="400" alt="Final design" loading="lazy">
+    </figure>
+    <figure class="">
+      <img src="/assets/img/multipoint/14592877-7w6ghxi68qrc2q8x3ghm-insta.webp" width="403" height="227" alt="Multipoint cablecam in action" loading="lazy">
+    </figure>
+  </div>
+</div>
+<div class="atm-container">
+  <div class="article-nav">
+    <a class="atm-link t-body-sm" href="/">← All work</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="atm-container">
+    <p class="t-body-sm" style="color:var(--ink-muted)">&copy; 2026 Ed Guillen. Built with the Atomic Age design system.</p>
+    <a class="atm-link t-body-sm" href="https://www.instagram.com/edmakesbread/" style="color:var(--ink-muted)">@edmakesbread</a>
+  </div>
+</footer>
+<script src="/assets/atomic-age/bundle.js"></script>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+{
+  "about-jasper": {
+    "f96e571f-d040-4dc9-8d6b-2f70c419e139-Ed1.png": {
+      "src": "/assets/img/about-jasper/f96e571f-ed1.webp",
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  "atat-attack": {
+    "1459376106908-GQU1V4JVG3M31YUWINM3-image-asset.jpeg": {
+      "src": "/assets/img/atat-attack/14593761-gqu1v4jvg3m31yuwinm3-image-asset.webp",
+      "width": 1600,
+      "height": 1218
+    },
+    "1459376964111-NR7WDZKLDEJ0X5VANKXS-image-asset.jpeg": {
+      "src": "/assets/img/atat-attack/14593769-nr7wdzkldej0x5vankxs-image-asset.webp",
+      "width": 1279,
+      "height": 718
+    },
+    "1459377208362-EMVTN75HK65XGHA0AL9Y-image-asset.jpeg": {
+      "src": "/assets/img/atat-attack/14593772-emvtn75hk65xgha0al9y-image-asset.webp",
+      "width": 1324,
+      "height": 742
+    },
+    "1459380302002-99JQ0UJPP4BXJMOQ5D2L-image-asset.gif": {
+      "src": "/assets/img/atat-attack/14593803-99jq0ujpp4bxjmoq5d2l-image-asset.webp",
+      "width": 399,
+      "height": 223
+    },
+    "1459380768424-5J9DSNSXMW8TA5ALQ5XO-image-asset.gif": {
+      "src": "/assets/img/atat-attack/14593807-5j9dsnsxmw8ta5alq5xo-image-asset.webp",
+      "width": 403,
+      "height": 227
+    },
+    "1459382302550-N7S3O7DIV0XE5CTWXLX1-image-asset.gif": {
+      "src": "/assets/img/atat-attack/14593823-n7s3o7div0xe5ctwxlx1-image-asset.webp",
+      "width": 403,
+      "height": 227
+    },
+    "1459383168540-912FJZLFC8FI3HTMCYPQ-image-asset.gif": {
+      "src": "/assets/img/atat-attack/14593831-912fjzlfc8fi3htmcypq-image-asset.webp",
+      "width": 403,
+      "height": 227
+    }
+  },
+  "cards-pattern": {
+    "1ad46369-4f2f-43c6-9d31-2bd755fff247-Early-explorations---Details.png": {
+      "src": "/assets/img/cards-pattern/1ad46369-early-explorations-details.webp",
+      "width": 1600,
+      "height": 741
+    },
+    "1eaf1259-0653-4243-ab92-0460f4e7af96-After-Assigned-Learning-Pathway.png": {
+      "src": "/assets/img/cards-pattern/1eaf1259-after-assigned-learning-pathway.webp",
+      "width": 1600,
+      "height": 851
+    },
+    "2a14a861-5d89-49c4-b239-a7a05f48a37d-New-Card-Component-Specs.png": {
+      "src": "/assets/img/cards-pattern/2a14a861-new-card-component-specs.webp",
+      "width": 1600,
+      "height": 661
+    },
+    "34651eb0-5da7-4893-955d-0df60eb0ac93-Elective-Learning.png": {
+      "src": "/assets/img/cards-pattern/34651eb0-elective-learning.webp",
+      "width": 1600,
+      "height": 756
+    },
+    "38f9368c-c810-46f8-bd19-7b1ce3efe8cc-After-Elective-Learning-Hub.png": {
+      "src": "/assets/img/cards-pattern/38f9368c-after-elective-learning-hub.webp",
+      "width": 1600,
+      "height": 1282
+    },
+    "3b9109be-ed21-42d5-8043-3e38aee8c7a4-metadata-audit.png": {
+      "src": "/assets/img/cards-pattern/3b9109be-metadata-audit.webp",
+      "width": 1600,
+      "height": 866
+    },
+    "44576050-b466-423d-b3bb-71d8b63ff0b2-After-Elective-Learner.png": {
+      "src": "/assets/img/cards-pattern/44576050-after-elective-learner.webp",
+      "width": 1600,
+      "height": 551
+    },
+    "48918ef1-c15a-4f7d-a913-900933e90f38-After-Elective-Learning-Pathway-1.png": {
+      "src": "/assets/img/cards-pattern/48918ef1-after-elective-learning-pathway-1.webp",
+      "width": 1600,
+      "height": 726
+    },
+    "4cd1a3ad-ad61-4475-96d8-64d6f2c6f013-After-K-12-Teacher.png": {
+      "src": "/assets/img/cards-pattern/4cd1a3ad-after-k-12-teacher.webp",
+      "width": 1600,
+      "height": 988
+    },
+    "796b526e-184e-477a-a8ce-924b8128e79c-After-Elective-Learning-Pathway.png": {
+      "src": "/assets/img/cards-pattern/796b526e-after-elective-learning-pathway.webp",
+      "width": 1600,
+      "height": 779
+    },
+    "7cd409a1-0586-4843-a442-21228768def4-After-Elective-Learning-Platform.png": {
+      "src": "/assets/img/cards-pattern/7cd409a1-after-elective-learning-platform.webp",
+      "width": 1600,
+      "height": 536
+    },
+    "82379541-7e79-4ccf-9ac1-6a20035ddf77-After-Elective-Admin.png": {
+      "src": "/assets/img/cards-pattern/82379541-after-elective-admin.webp",
+      "width": 1600,
+      "height": 717
+    },
+    "82fc03ae-2fba-4689-a4a4-de1d951f611b-After-Elective-Student.png": {
+      "src": "/assets/img/cards-pattern/82fc03ae-after-elective-student.webp",
+      "width": 1600,
+      "height": 810
+    },
+    "83811250-8b25-4952-9af5-5078129e2654-New-Card-Component-Variants.png": {
+      "src": "/assets/img/cards-pattern/83811250-new-card-component-variants.webp",
+      "width": 1600,
+      "height": 1095
+    },
+    "af23422c-93a3-4f0c-8d58-70bc11f3ccf0-Product-Audit.png": {
+      "src": "/assets/img/cards-pattern/af23422c-product-audit.webp",
+      "width": 1600,
+      "height": 1032
+    },
+    "b8d541b1-bcf9-46ca-af47-367f6c987da8-K12-Learner.png": {
+      "src": "/assets/img/cards-pattern/b8d541b1-k12-learner.webp",
+      "width": 1600,
+      "height": 756
+    },
+    "caadc746-bc53-469a-a0c9-77cdba99f1a6-K12-Teacher.png": {
+      "src": "/assets/img/cards-pattern/caadc746-k12-teacher.webp",
+      "width": 1600,
+      "height": 756
+    },
+    "e15837dd-7205-42b4-a2ab-04a283984497-Platform-Course-Card.png": {
+      "src": "/assets/img/cards-pattern/e15837dd-platform-course-card.webp",
+      "width": 1600,
+      "height": 756
+    },
+    "eb60cae6-77f7-4fa5-8877-c29921c0647b-Outcome.png": {
+      "src": "/assets/img/cards-pattern/eb60cae6-outcome.webp",
+      "width": 1600,
+      "height": 492
+    },
+    "ed32dd7a-bd37-4306-a4c9-6692d35fca61-Early-explorations---Details.png": {
+      "src": "/assets/img/cards-pattern/ed32dd7a-early-explorations-details.webp",
+      "width": 1600,
+      "height": 771
+    }
+  },
+  "course-building-process": {
+    "12a97075-d1ea-48cb-b694-eb9a13bc4640-ux-collaboration-relationship.png": {
+      "src": "/assets/img/course-building-process/12a97075-ux-collaboration-relationship.webp",
+      "width": 1600,
+      "height": 1067
+    },
+    "1cb41011-fea8-4b4a-a2cd-830f063ef348-course-building-process.png": {
+      "src": "/assets/img/course-building-process/1cb41011-course-building-process.webp",
+      "width": 1600,
+      "height": 776
+    },
+    "26dcb747-b3fd-4ab3-b594-c73a96757bee-course-building-process-alt.png": {
+      "src": "/assets/img/course-building-process/26dcb747-course-building-process-alt.webp",
+      "width": 1600,
+      "height": 649
+    },
+    "26fdc682-47fd-4fa7-b970-488869fd43e6-phase-3-launch.png": {
+      "src": "/assets/img/course-building-process/26fdc682-phase-3-launch.webp",
+      "width": 1600,
+      "height": 907
+    },
+    "32247c43-086a-4299-9101-4625134233e2-iterate.png": {
+      "src": "/assets/img/course-building-process/32247c43-iterate.webp",
+      "width": 1600,
+      "height": 730
+    },
+    "706025eb-bfb8-447f-9809-9f099d7557a3-phase-2-develoment.png": {
+      "src": "/assets/img/course-building-process/706025eb-phase-2-develoment.webp",
+      "width": 1600,
+      "height": 907
+    },
+    "a446a866-366a-44f4-8df0-f3c7fa382e7b-phase-1-dicovery.png": {
+      "src": "/assets/img/course-building-process/a446a866-phase-1-dicovery.webp",
+      "width": 1600,
+      "height": 907
+    },
+    "e031109c-29e7-4959-b836-c4849e6621e2-ce-collaboration-relationships.png": {
+      "src": "/assets/img/course-building-process/e031109c-collaboration-relationships.webp",
+      "width": 1600,
+      "height": 1213
+    },
+    "f9935f87-73de-4560-8a6a-8a411a163a07-course-building-flow-detailed.png": {
+      "src": "/assets/img/course-building-process/f9935f87-course-building-flow-detailed.webp",
+      "width": 1600,
+      "height": 772
+    }
+  },
+  "elements": {
+    "19b62a8d-8686-45fe-bb4d-8273e3f4cada-Original-aproach.png": {
+      "src": "/assets/img/elements/19b62a8d-original-aproach.webp",
+      "width": 1440,
+      "height": 2909
+    },
+    "2fb427b4-ae1e-45cf-b9de-f89ea6df2e12-New-Page.png": {
+      "src": "/assets/img/elements/2fb427b4-new-page.webp",
+      "width": 1160,
+      "height": 2678
+    },
+    "6ee04640-6680-4e1d-b4dd-f075b4e24792-elements-homepage.png": {
+      "src": "/assets/img/elements/6ee04640-elements-homepage.webp",
+      "width": 832,
+      "height": 707
+    },
+    "9e089bb8-fc6a-4d38-ba49-763ed40401ff-Old-Page.png": {
+      "src": "/assets/img/elements/9e089bb8-old-page.webp",
+      "width": 1160,
+      "height": 2678
+    },
+    "e9f1c181-fba9-4b2d-a9f5-9a6910ba3754-IA-Structure.png": {
+      "src": "/assets/img/elements/e9f1c181-ia-structure.webp",
+      "width": 1600,
+      "height": 431
+    }
+  },
+  "home": {
+    "51b0f96e-13a8-43d8-bb5a-807f2c3eb7e4-elements-case-study.png": {
+      "src": "/assets/img/home/51b0f96e-elements-case-study.webp",
+      "width": 1024,
+      "height": 500
+    },
+    "84f0ef93-4ae9-4eae-8446-136ee59b6141-at-at-concept.jpg": {
+      "src": "/assets/img/home/84f0ef93-at-at-concept.webp",
+      "width": 1600,
+      "height": 1066
+    },
+    "9e8ac426-621a-44eb-abfd-1e0b8f384e92-Ed1.png": {
+      "src": "/assets/img/home/9e8ac426-ed1.webp",
+      "width": 1024,
+      "height": 1024
+    },
+    "9ef89ff3-e8bc-49ae-a1c4-dceba0191a21-image-asset.jpg": {
+      "src": "/assets/img/home/9ef89ff3-image-asset.webp",
+      "width": 465,
+      "height": 310
+    },
+    "af9f4514-12f1-4065-bc6a-296cd6898ea0-image-asset.jpg": {
+      "src": "/assets/img/home/af9f4514-image-asset.webp",
+      "width": 558,
+      "height": 372
+    },
+    "be21c4ec-a4b0-4a65-bc79-606aa1e37515-process-case-study.png": {
+      "src": "/assets/img/home/be21c4ec-process-case-study.webp",
+      "width": 1024,
+      "height": 500
+    },
+    "ca94c176-0cee-465d-8ccf-277354a4b764-simulation-based-learning.png": {
+      "src": "/assets/img/home/ca94c176-simulation-based-learning.webp",
+      "width": 1024,
+      "height": 500
+    },
+    "e577fd47-4d5e-446d-9df1-3d7ab5fa4de5-cards-case-study.png": {
+      "src": "/assets/img/home/e577fd47-cards-case-study.webp",
+      "width": 1024,
+      "height": 500
+    }
+  },
+  "multipoint": {
+    "1459282806021-2J8EZU4KFBU7YY8VGHQ6-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592828-2j8ezu4kfbu7yy8vghq6-image-asset.webp",
+      "width": 1587,
+      "height": 400
+    },
+    "1459283400620-MS31PKWZCIBM4UUFWSU0-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592834-ms31pkwzcibm4uufwsu0-image-asset.webp",
+      "width": 1600,
+      "height": 1200
+    },
+    "1459283431467-PJQ3AYTKO63TXZV3NVCT-Screen-Shot-2016-03-29-at-1.30.08-PM.png": {
+      "src": "/assets/img/multipoint/14592834-pjq3aytko63txzv3nvct-screen-shot-2016-03-29-at-1-30-08-pm.webp",
+      "width": 910,
+      "height": 622
+    },
+    "1459285094039-KFXJHX21YCKJNXGVLTQZ-multipoint-cable-cam-interaction-keys.jpg": {
+      "src": "/assets/img/multipoint/14592850-kfxjhx21yckjnxgvltqz-multipoint-cable-cam-interaction-keys.webp",
+      "width": 714,
+      "height": 931
+    },
+    "1459286289347-Y4S1ZVP1BBMW6U1AR9TP-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592862-y4s1zvp1bbmw6u1ar9tp-image-asset.webp",
+      "width": 529,
+      "height": 400
+    },
+    "1459287739516-7W6GHXI68QRC2Q8X3GHM-insta.gif": {
+      "src": "/assets/img/multipoint/14592877-7w6ghxi68qrc2q8x3ghm-insta.webp",
+      "width": 403,
+      "height": 227
+    },
+    "1459289646610-UUD1XCA916VUNYRE5WFJ-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592896-uud1xca916vunyre5wfj-image-asset.webp",
+      "width": 1600,
+      "height": 1200
+    },
+    "1459289948812-2O7GX4TP8628XA4ZBQHH-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592899-2o7gx4tp8628xa4zbqhh-image-asset.webp",
+      "width": 1600,
+      "height": 468
+    },
+    "1459290137857-ZD2PY4XROFYEO3UNOUGN-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592901-zd2py4xrofyeo3unougn-image-asset.webp",
+      "width": 1600,
+      "height": 1014
+    },
+    "1459291722862-2MOMSTXGP9XWP2BMMEG9-multipoint-cable-cam-01.jpg": {
+      "src": "/assets/img/multipoint/14592917-2momstxgp9xwp2bmmeg9-multipoint-cable-cam-01.webp",
+      "width": 1138,
+      "height": 640
+    },
+    "1459291748525-W4HAEF6UG8B09A9I2I93-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592917-w4haef6ug8b09a9i2i93-image-asset.webp",
+      "width": 1138,
+      "height": 640
+    },
+    "1459291830830-AH7LFMOA9DKBUD7FGSSB-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592918-ah7lfmoa9dkbud7fgssb-image-asset.webp",
+      "width": 1138,
+      "height": 640
+    },
+    "1459291851500-W48R30YPU6A2UP23JJZ2-image-asset.jpeg": {
+      "src": "/assets/img/multipoint/14592918-w48r30ypu6a2up23jjz2-image-asset.webp",
+      "width": 1137,
+      "height": 641
+    }
+  },
+  "resume": {
+    "7016132e-f1f2-4233-91b8-b88ac2eb55c3-ed.jpeg": {
+      "src": "/assets/img/resume/7016132e-ed.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "saving-loading-smart-shots": {
+    "1459363529675-62PL1ILL62TZUVWAIFRA-image-asset.jpeg": {
+      "src": "/assets/img/saving-loading-smart-shots/14593635-62pl1ill62tzuvwaifra-image-asset.webp",
+      "width": 1477,
+      "height": 500
+    },
+    "1459366209904-VMPDUMJ5N4M9NHF9037B-image-asset.jpeg": {
+      "src": "/assets/img/saving-loading-smart-shots/14593662-vmpdumj5n4m9nhf9037b-image-asset.webp",
+      "width": 998,
+      "height": 300
+    },
+    "1459366720738-BVPIA3BDZ7JFXJA39O8T-IMG_0345.PNG": {
+      "src": "/assets/img/saving-loading-smart-shots/14593667-bvpia3bdz7jfxja39o8t-img-0345.webp",
+      "width": 1334,
+      "height": 750
+    },
+    "1459367622279-EU3AITCC48OACNX10RBY-image-asset.gif": {
+      "src": "/assets/img/saving-loading-smart-shots/14593676-eu3aitcc48oacnx10rby-image-asset.webp",
+      "width": 397,
+      "height": 223
+    },
+    "1459367711752-F18Q0BQEL2EYMMWW0EOA-image-asset.jpeg": {
+      "src": "/assets/img/saving-loading-smart-shots/14593677-f18q0bqel2eymmww0eoa-image-asset.webp",
+      "width": 1600,
+      "height": 734
+    },
+    "1459367916088-X8JWL4VHRE95BRDUT3RH-image-asset.jpeg": {
+      "src": "/assets/img/saving-loading-smart-shots/14593679-x8jwl4vhre95brdut3rh-image-asset.webp",
+      "width": 1334,
+      "height": 750
+    },
+    "1459368031445-RYY5A1C8N2GCE0IVNRJU-image-asset.jpeg": {
+      "src": "/assets/img/saving-loading-smart-shots/14593680-ryy5a1c8n2gce0ivnrju-image-asset.webp",
+      "width": 1600,
+      "height": 1200
+    },
+    "1459369079752-BNE7TTJKSG57E38USWTN-image-asset.gif": {
+      "src": "/assets/img/saving-loading-smart-shots/14593690-bne7ttjksg57e38uswtn-image-asset.webp",
+      "width": 533,
+      "height": 300
+    },
+    "1459370617797-L1JCX3ZSLIMOT63DXT95-load-cable-ready.jpg": {
+      "src": "/assets/img/saving-loading-smart-shots/14593706-l1jcx3zslimot63dxt95-load-cable-ready.webp",
+      "width": 889,
+      "height": 500
+    },
+    "1459371953806-0LJN9WT00LSSTY6SXMML-image-asset.gif": {
+      "src": "/assets/img/saving-loading-smart-shots/14593719-0ljn9wt00lssty6sxmml-image-asset.webp",
+      "width": 1066,
+      "height": 600
+    },
+    "1459372001794-8YEI6Z4GLSA9QT5I28F4-load-cable-fly-to.gif": {
+      "src": "/assets/img/saving-loading-smart-shots/14593720-8yei6z4glsa9qt5i28f4-load-cable-fly-to.webp",
+      "width": 1066,
+      "height": 600
+    },
+    "1459372021698-QC650CCNYB5VY3BHTYHX-image-asset.jpeg": {
+      "src": "/assets/img/saving-loading-smart-shots/14593720-qc650ccnyb5vy3bhtyhx-image-asset.webp",
+      "width": 889,
+      "height": 500
+    }
+  },
+  "simulation-based-learning": {
+    "03400359-ad0f-4e57-9851-bba190ed1c6e-notes-1.png": {
+      "src": "/assets/img/simulation-based-learning/03400359-notes-1.webp",
+      "width": 1600,
+      "height": 635
+    },
+    "1654557406716-V3QGPGZWBHAN2UGIJKTL-01---Item-Select-Page.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-v3qgpgzwbhan2ugijktl-01-item-select-page.webp",
+      "width": 1440,
+      "height": 929
+    },
+    "1654557406781-P6ISL9DVRXI9IM7ELFZH-02---Compare-Page.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-p6isl9dvrxi9im7elfzh-02-compare-page.webp",
+      "width": 1440,
+      "height": 929
+    },
+    "1654557407443-17YI3W3OJTTSRKOZQ905-03---Drawer-page.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-17yi3w3ojttsrkozq905-03-drawer-page.webp",
+      "width": 1440,
+      "height": 1232
+    },
+    "1654557407591-MJ5QC3EK5LXC3ON287LC-04---Assessment-Page.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-mj5qc3ek5lxc3on287lc-04-assessment-page.webp",
+      "width": 1440,
+      "height": 1080
+    },
+    "1654557408018-JYWLPLP404ES9TF0X3RZ-05---Assessment-Feedback-Page.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-jywlplp404es9tf0x3rz-05-assessment-feedback-page.webp",
+      "width": 1440,
+      "height": 1080
+    },
+    "1654557408171-3D2UGHTEJE1HZFGZJJL1-06---Review-Page.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-3d2ughteje1hzfgzjjl1-06-review-page.webp",
+      "width": 1440,
+      "height": 1080
+    },
+    "1654557408763-5NLC274S8SJG4C4F5Z1B-07---Game-Results---100-Score.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-5nlc274s8sjg4c4f5z1b-07-game-results-100-score.webp",
+      "width": 1440,
+      "height": 800
+    },
+    "1654557408904-OC3QKU2IQGX4EAAELPM8-08---Game-Results---60--90-Score.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-oc3qku2iqgx4eaaelpm8-08-game-results-60-90-score.webp",
+      "width": 1440,
+      "height": 800
+    },
+    "1654557409365-0OLGWUDL69YKJJ09HLSR-09---Game-Results-_60-.png": {
+      "src": "/assets/img/simulation-based-learning/16545574-0olgwudl69ykjj09hlsr-09-game-results-60.webp",
+      "width": 1440,
+      "height": 800
+    },
+    "1654557586616-D95RX5YOSME8B1FTASQ2-Interaction_01.png": {
+      "src": "/assets/img/simulation-based-learning/16545575-d95rx5yosme8b1ftasq2-interaction-01.webp",
+      "width": 1440,
+      "height": 900
+    },
+    "1654557586617-8Y4SYRDIRNSV04E77XO1-Interaction_02.png": {
+      "src": "/assets/img/simulation-based-learning/16545575-8y4syrdirnsv04e77xo1-interaction-02.webp",
+      "width": 1440,
+      "height": 900
+    },
+    "1654557587148-J61YHPV30ZZH2F5HADSQ-Interaction_03.png": {
+      "src": "/assets/img/simulation-based-learning/16545575-j61yhpv30zzh2f5hadsq-interaction-03.webp",
+      "width": 1440,
+      "height": 900
+    },
+    "1654557587252-GS5M8QTXHO0039O417ZS-Interaction_04.png": {
+      "src": "/assets/img/simulation-based-learning/16545575-gs5m8qtxho0039o417zs-interaction-04.webp",
+      "width": 1440,
+      "height": 900
+    },
+    "1654557587697-VN0RPESCC7G72XWZLJEQ-Interaction_05.png": {
+      "src": "/assets/img/simulation-based-learning/16545575-vn0rpescc7g72xwzljeq-interaction-05.webp",
+      "width": 1440,
+      "height": 900
+    },
+    "1654557588005-55FDXB5Q5VEKXQSKVJ1M-Interaction_06.png": {
+      "src": "/assets/img/simulation-based-learning/16545575-55fdxb5q5vekxqskvj1m-interaction-06.webp",
+      "width": 1440,
+      "height": 900
+    },
+    "2897e45e-6696-49ac-93cd-0e9bbbd242fe-comapre-items-small.gif": {
+      "src": "/assets/img/simulation-based-learning/2897e45e-comapre-items-small.webp",
+      "width": 566,
+      "height": 474
+    },
+    "99a9295e-cb7c-4da3-82a1-e207a9c12b40-game-flow.png": {
+      "src": "/assets/img/simulation-based-learning/99a9295e-game-flow.webp",
+      "width": 1600,
+      "height": 403
+    },
+    "ceaaf0f2-9faa-4087-9698-811bfd9b1563-comapre-items-small.gif": {
+      "src": "/assets/img/simulation-based-learning/ceaaf0f2-comapre-items-small.webp",
+      "width": 566,
+      "height": 474
+    },
+    "d0c0c4b8-713b-4a8b-9232-04f8fbcb59f0-notes-2.png": {
+      "src": "/assets/img/simulation-based-learning/d0c0c4b8-notes-2.webp",
+      "width": 1600,
+      "height": 808
+    },
+    "da5ef213-4bed-432b-bac2-35aa9ca94fd5-game-logic.png": {
+      "src": "/assets/img/simulation-based-learning/da5ef213-game-logic.webp",
+      "width": 1600,
+      "height": 354
+    }
+  },
+  "site-scan": {
+    "1460396650705-AGAQDF508LMGEXRQX28U-image-asset.png": {
+      "src": "/assets/img/site-scan/14603966-agaqdf508lmgexrqx28u-image-asset.webp",
+      "width": 1256,
+      "height": 942
+    },
+    "1460396694772-7EOS08O5LUCBWPX5PWZ4-image-asset.png": {
+      "src": "/assets/img/site-scan/14603966-7eos08o5lucbwpx5pwz4-image-asset.webp",
+      "width": 1258,
+      "height": 944
+    },
+    "1460396813280-GQRFWBNRD0R9LCYKL9J4-image-asset.png": {
+      "src": "/assets/img/site-scan/14603968-gqrfwbnrd0r9lcykl9j4-image-asset.webp",
+      "width": 1258,
+      "height": 942
+    },
+    "1460396846791-BU27TEFF9YH74F3BVI1S-image-asset.png": {
+      "src": "/assets/img/site-scan/14603968-bu27teff9yh74f3bvi1s-image-asset.webp",
+      "width": 1264,
+      "height": 946
+    },
+    "1460399203590-Q4MJ293HSYIA0CQP661B-image-asset.png": {
+      "src": "/assets/img/site-scan/14603992-q4mj293hsyia0cqp661b-image-asset.webp",
+      "width": 1256,
+      "height": 946
+    },
+    "1460399252854-X5M1V1JPI1GEZ3SDLNCB-image-asset.png": {
+      "src": "/assets/img/site-scan/14603992-x5m1v1jpi1gez3sdlncb-image-asset.webp",
+      "width": 1260,
+      "height": 944
+    },
+    "1460403994579-VJU5465JSSOO3I19SEK1-image-asset.jpeg": {
+      "src": "/assets/img/site-scan/14604039-vju5465jssoo3i19sek1-image-asset.webp",
+      "width": 1600,
+      "height": 488
+    },
+    "1460411481163-PB2L5SNXYQVMWMUZNR8F-image-asset.jpeg": {
+      "src": "/assets/img/site-scan/14604114-pb2l5snxyqvmwmuznr8f-image-asset.webp",
+      "width": 600,
+      "height": 600
+    },
+    "1460415607263-SWBK2SYUXKNORKR7XOGM-image-asset.jpeg": {
+      "src": "/assets/img/site-scan/14604156-swbk2syuxknorkr7xogm-image-asset.webp",
+      "width": 288,
+      "height": 400
+    },
+    "1460415627095-QGPXL4XRNDC2UPLW6TOU-image-asset.jpeg": {
+      "src": "/assets/img/site-scan/14604156-qgpxl4xrndc2uplw6tou-image-asset.webp",
+      "width": 288,
+      "height": 400
+    },
+    "1460417714508-GCWOG4NBGMWYZ6T1HKC0-image-asset.png": {
+      "src": "/assets/img/site-scan/14604177-gcwog4nbgmwyz6t1hkc0-image-asset.webp",
+      "width": 1370,
+      "height": 856
+    },
+    "1460418275396-VA3CZIHNESEPAFMQLSOO-image-asset.png": {
+      "src": "/assets/img/site-scan/14604182-va3czihnesepafmqlsoo-image-asset.webp",
+      "width": 1370,
+      "height": 856
+    },
+    "1460418301594-BSSR2PMI7MAHMWB65LM8-image-asset.png": {
+      "src": "/assets/img/site-scan/14604183-bssr2pmi7mahmwb65lm8-image-asset.webp",
+      "width": 1370,
+      "height": 856
+    },
+    "1460419163226-LEJT88IB78316YXKM0SK-image-asset.png": {
+      "src": "/assets/img/site-scan/14604191-lejt88ib78316yxkm0sk-image-asset.webp",
+      "width": 1370,
+      "height": 856
+    },
+    "1460419181051-KZFWVSY480OYRNKZI7YY-image-asset.png": {
+      "src": "/assets/img/site-scan/14604191-kzfwvsy480oyrnkzi7yy-image-asset.webp",
+      "width": 810,
+      "height": 310
+    },
+    "1460419841818-M1WYBO4KSPU6NFU2JSJD-image-asset.png": {
+      "src": "/assets/img/site-scan/14604198-m1wybo4kspu6nfu2jsjd-image-asset.webp",
+      "width": 1370,
+      "height": 856
+    },
+    "1460420831171-D5QQIKIRM4R441K5JXGI-image-asset.png": {
+      "src": "/assets/img/site-scan/14604208-d5qqikirm4r441k5jxgi-image-asset.webp",
+      "width": 1370,
+      "height": 856
+    },
+    "1460420846340-ZELIK51HVUQBZSRVQ2NG-image-asset.png": {
+      "src": "/assets/img/site-scan/14604208-zelik51hvuqbzsrvq2ng-image-asset.webp",
+      "width": 1370,
+      "height": 856
+    }
+  },
+  "solo-app-case-studies": {
+    "1459294290246-OQTZHRZ7S32OF9AH3U6T-image-asset.jpeg": {
+      "src": "/assets/img/solo-app-case-studies/14592942-oqtzhrz7s32of9ah3u6t-image-asset.webp",
+      "width": 529,
+      "height": 400
+    },
+    "1459295790196-SBKHJXQD09HEEETDWFN3-image-asset.jpeg": {
+      "src": "/assets/img/solo-app-case-studies/14592957-sbkhjxqd09heeetdwfn3-image-asset.webp",
+      "width": 529,
+      "height": 400
+    }
+  },
+  "solo-app-case-studies-1": {
+    "1460421548420-UVG5JD2Q3M47QZPZJL44-front-page-inspect.jpg": {
+      "src": "/assets/img/solo-app-case-studies-1/14604215-uvg5jd2q3m47qzpzjl44-front-page-inspect.webp",
+      "width": 1071,
+      "height": 663
+    }
+  }
+}

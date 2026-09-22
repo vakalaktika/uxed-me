@@ -1,0 +1,24 @@
+{
+  "name": "uxed-me",
+  "version": "1.0.0",
+  "description": "Static site for Ed Guillen's portfolio. No build step required.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vakalaktika/uxed-me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vakalaktika/uxed-me/issues"
+  },
+  "homepage": "https://github.com/vakalaktika/uxed-me#readme",
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}
