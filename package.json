@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Static site for Ed Guillen's portfolio. No build step required.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vakalaktika/uxed-me.git"
