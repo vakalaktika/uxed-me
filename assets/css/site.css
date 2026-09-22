@@ -60,8 +60,8 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 .page-footer .atm-container { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between; }
 .page-footer p { margin: 0; }
 
-.section { padding: var(--space-10) 0; }
-.section--tight { padding: var(--space-8) 0; }
+.section { padding-block: var(--space-10); }
+.section--tight { padding-block: var(--space-8); }
 .section + .section { border-top: 1px solid var(--hairline); }
 
 /* ---------- TopNav: mobile sheet (bundle.css ships desktop-only) ---------- */
@@ -97,7 +97,7 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 }
 
 /* ---------- Article (case study) ---------- */
-.article-header { padding: var(--space-9) 0 var(--space-8); }
+.article-header { padding-block: var(--space-9) var(--space-8); }
 .article-header .atm-eyebrow { display: block; margin-bottom: var(--space-3); }
 .article-header h1 { margin-bottom: var(--space-4); max-width: 20ch; }
 .article-header .lede { max-width: 60ch; }
@@ -105,7 +105,7 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 .meta-panel {
   margin-top: var(--space-7);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
   gap: var(--space-6);
   padding-top: var(--space-6);
   border-top: 1px solid var(--hairline);
@@ -138,7 +138,7 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 /* ---------- Home / hub grids ---------- */
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: var(--space-6);
 }
 .case-card {
@@ -160,7 +160,7 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 
 .hub-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: var(--space-6);
 }
 
@@ -261,6 +261,45 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
   .hero__badge-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
 
+/* ---------- Mobile scale ----------
+   bundle.css ships no responsive layer, so the whole phone experience is
+   tuned here: a tighter gutter, a stepped-down display/heading scale so
+   long titles don't eat the viewport, compressed section rhythm, and
+   comfortable tap targets. */
+@media (max-width: 600px) {
+  .atm-container { padding-left: var(--space-5); padding-right: var(--space-5); }
+  /* The hero is full-bleed; .hero__mobile carries its own gutter. */
+  .hero { padding-inline: 0; }
+
+  .t-display-xl { font-size: 44px; line-height: 46px; }
+  .t-display-l  { font-size: 38px; line-height: 42px; }
+  .t-h1 { font-size: 32px; line-height: 38px; }
+  .t-h2 { font-size: 26px; line-height: 32px; }
+  .t-h3 { font-size: 22px; line-height: 28px; }
+  .t-quote { font-size: 22px; line-height: 32px; }
+
+  h1 { font-size: 32px; line-height: 38px; }
+  h2 { font-size: 26px; line-height: 32px; margin-top: var(--space-8); }
+  h3 { font-size: 22px; line-height: 28px; }
+
+  .section { padding-block: var(--space-8); }
+  .section--tight { padding-block: var(--space-7); }
+  .article-header { padding-block: var(--space-7) var(--space-6); }
+  .page-footer { margin-top: var(--space-8); padding: var(--space-7) 0; }
+
+  .meta-panel { gap: var(--space-5); }
+
+  .prose figure { margin: var(--space-6) 0; }
+  .hero-figure { margin-bottom: var(--space-7); }
+
+  .article-nav { flex-direction: column; align-items: stretch; margin-top: var(--space-8); }
+  .article-nav .atm-btn { width: 100%; }
+
+  /* Tap targets: the small button variant ships at 36px. */
+  .atm-btn--sm { min-height: 44px; }
+  .page-footer .atm-link { display: inline-block; padding: var(--space-2) 0; }
+}
+
 /* ---------- Resume ---------- */
 .resume-header { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-end; justify-content: space-between; margin-bottom: var(--space-9); }
 .job-entry { display: grid; grid-template-columns: 200px 1fr; gap: var(--space-4); }
@@ -269,6 +308,7 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 .job-entry__what { font-family: var(--font-display); font-weight: 600; font-size: 18px; margin: 0 0 2px; }
 .job-entry__where { font-family: var(--font-body); font-size: 14px; color: var(--ink-secondary); margin: 0; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.resume-header .atm-avatar { flex: none; }
 
 @media (max-width: 600px) {
   .job-entry { grid-template-columns: 1fr; gap: var(--space-1); }
