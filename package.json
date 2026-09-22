@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Static site for Ed Guillen's portfolio. No build step required.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vakalaktika/uxed-me.git"
