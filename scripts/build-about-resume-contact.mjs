@@ -24,7 +24,7 @@ const aboutBody = `
   </div>
   <div class="prose">
     <p class="t-body-lg about-lede">I know that communication among developers, management, and marketing can be tough, but I like helping these teams connect. I have experience in these roles and understand how to balance user needs with business goals.</p>
-    <p>I also enjoy making bread — b. 1986, HK.</p>
+    <p>I also enjoy <a href="https://www.instagram.com/edmakesbread/" target="_blank" rel="noopener noreferrer">making bread</a>.</p>
     <a class="atm-btn atm-btn--secondary about-cta" href="/resume">View resume</a>
     ${socialLinks()}
   </div>

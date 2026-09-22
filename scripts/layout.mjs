@@ -8,7 +8,10 @@ const NAV_LINKS = [
   { href: "/about", label: "About", key: "about" },
 ];
 
-const ATOM_MARK = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>`;
+/* The three orbits cross near the middle, so a heavy stroke fills the
+   counters in and the mark reads as a blob at nav size. 1.2 keeps the
+   orbits open at 22px while still matching the wordmark's weight. */
+const ATOM_MARK = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.6" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>`;
 
 function nav(activeKey) {
   const links = NAV_LINKS.map(
@@ -42,8 +45,7 @@ function nav(activeKey) {
 const FOOTER = `
 <footer class="page-footer">
   <div class="atm-container">
-    <p class="t-body-sm" style="color:var(--ink-muted)">&copy; ${new Date().getFullYear()} Ed Guillen. Built with the Atomic Age design system.</p>
-    <a class="atm-link t-body-sm" href="https://www.instagram.com/edmakesbread/" style="color:var(--ink-muted)">@edmakesbread</a>
+    <p class="t-body-sm" style="color:var(--ink-muted)">&copy; ${new Date().getFullYear()} Ed Guillen</p>
   </div>
 </footer>`;
 
