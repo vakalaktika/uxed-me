@@ -303,21 +303,6 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
   .page-footer .atm-link { display: inline-block; padding: var(--space-2) 0; }
 }
 
-/* ---------- Button target size ----------
-   The Button guidelines require a 44px minimum target; .atm-btn--sm draws at
-   36px. Extend the hit area past the painted box instead of resizing it, so
-   the small variant keeps its intended proportions. */
-.atm-btn--sm { position: relative; }
-.atm-btn--sm::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 44px;
-}
-
 /* ---------- Resume ---------- */
 .resume-header { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-end; justify-content: space-between; margin-bottom: var(--space-9); }
 .job-entry { display: grid; grid-template-columns: 200px 1fr; gap: var(--space-4); }

@@ -12,6 +12,7 @@
   --atm-dur-1: 120ms;
   --atm-dur-2: 200ms;
   --atm-dur-3: 320ms;
+  --atm-ring-color: var(--focus);
   --atm-ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
   --atm-outline: 1px solid var(--border-strong);
 }
@@ -32,7 +33,10 @@
 [class^="atm-"]:focus-visible,
 [class*=" atm-"]:focus-visible {
   outline: none;
-  box-shadow: var(--atm-ring);
+  /* Spelled out rather than var(--atm-ring): a custom property declared on
+     :root has its var()s substituted there, so --atm-ring-color must be read
+     here, on the focused element, for a variant override to apply. */
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--atm-ring-color);
 }
 
 /* ---- Type helpers (in case classes are used directly) ---- */
@@ -66,14 +70,24 @@
 .atm-btn--accent:hover { background: var(--accent-hover); }
 .atm-btn--cta { --_bg: var(--accent); --_fg: var(--on-accent); border-radius: var(--radius-pill); height: 52px; padding: 0 var(--space-6); font-size: 15px; }
 .atm-btn--cta:hover { background: var(--accent-hover); }
+/* --focus resolves to --accent in Daylight, so an accent fill would be ringed
+   in its own color; ink stays distinct on every surface in both themes. */
+.atm-btn--accent, .atm-btn--cta { --atm-ring-color: var(--ink); }
 .atm-btn--tertiary { --_bg: transparent; --_fg: var(--primary); box-shadow: none; padding: 0 var(--space-3); }
 .atm-btn--tertiary:hover { background: var(--primary-soft); transform: none; box-shadow: none; }
 .atm-btn--ghost { --_bg: transparent; --_fg: var(--ink); }
 .atm-btn--ghost:hover { background: var(--surface-sunken); transform: none; box-shadow: none; }
-.atm-btn--sm { height: 36px; font-size: 12.5px; padding: 0 var(--space-4); }
+.atm-btn--sm { height: 36px; font-size: 12.5px; padding: 0 var(--space-4); position: relative; }
+/* 36px is the drawn height; this lifts the hit area to the 44px minimum
+   target without changing the button's proportions. */
+.atm-btn--sm::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); height: 44px; }
 .atm-btn--lg { height: 52px; font-size: 15px; padding: 0 var(--space-6); }
 .atm-btn--block { width: 100%; }
-.atm-btn[disabled], .atm-btn.is-disabled { opacity: var(--opacity-disabled); cursor: not-allowed; pointer-events: none; }
+.atm-btn[disabled], .atm-btn.is-disabled, .atm-btn[aria-disabled="true"],
+.atm-iconbtn[disabled], .atm-iconbtn.is-disabled, .atm-iconbtn[aria-disabled="true"],
+.atm-fab[disabled], .atm-fab.is-disabled, .atm-fab[aria-disabled="true"] {
+  opacity: var(--opacity-disabled); cursor: not-allowed; pointer-events: none;
+}
 
 .atm-link { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; font-weight: 500; }
 .atm-link:hover { color: var(--primary-hover); text-decoration-color: var(--accent); }
@@ -94,6 +108,7 @@
   position: relative; display: inline-flex; align-items: center; justify-content: center;
   width: 56px; height: 56px; border-radius: var(--radius-pill);
   background: var(--accent); color: var(--on-accent); border: none; cursor: pointer;
+  --atm-ring-color: var(--ink);
   box-shadow: var(--shadow-lg); transition: transform var(--atm-dur-1) var(--atm-ease);
 }
 .atm-fab:hover { transform: translateY(-2px) rotate(-4deg); }
