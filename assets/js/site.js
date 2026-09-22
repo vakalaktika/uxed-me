@@ -34,10 +34,46 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initNav);
-  } else {
+  // One electron lap around the brand mark: once shortly after load, then on
+  // hover/focus. Not on a timer — the point is a moment of delight, not motion
+  // running in the corner of every page.
+  function initAtomMark() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var marks = document.querySelectorAll(".atom-mark");
+    if (!marks.length) return;
+
+    function lap(mark) {
+      mark.classList.remove("is-charged");
+      void mark.getBoundingClientRect(); // restart the animation mid-flight
+      mark.classList.add("is-charged");
+    }
+
+    Array.prototype.forEach.call(marks, function (mark) {
+      var link = mark.closest ? mark.closest("a") : null;
+      if (link) {
+        link.addEventListener("mouseenter", function () { lap(mark); });
+        link.addEventListener("focus", function () { lap(mark); });
+      }
+      // animationend bubbles from the electron, so the class never sticks.
+      mark.addEventListener("animationend", function () {
+        mark.classList.remove("is-charged");
+      });
+    });
+
+    window.setTimeout(function () {
+      Array.prototype.forEach.call(marks, lap);
+    }, 900);
+  }
+
+  function init() {
     initNav();
+    initAtomMark();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
 
   window.addEventListener("load", function () {

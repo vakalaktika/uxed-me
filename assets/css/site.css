@@ -123,6 +123,29 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
 .meta-panel dt { font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; font-weight: 600; color: var(--ink-muted); margin: 0 0 var(--space-2); }
 .meta-panel dd { font-family: var(--font-body); font-size: 15px; line-height: 22px; color: var(--ink); margin: 0; }
 
+/* ---------- Brand mark: one electron lap ----------
+   A single particle rides the front orbit, fading in and out at the ends, on
+   page load and again on hover/focus. Deliberately not a loop — it's a moment
+   of delight, not ambient motion competing with the page. */
+.atom-mark__electron {
+  offset-path: path("M 2 12 a 10 4 0 1 0 20 0 a 10 4 0 1 0 -20 0");
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+  opacity: 0;
+}
+.atom-mark.is-charged .atom-mark__electron {
+  animation: atom-lap 1500ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+@keyframes atom-lap {
+  0%   { offset-distance: 0%;   opacity: 0; }
+  18%  { opacity: 1; }
+  82%  { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .atom-mark.is-charged .atom-mark__electron { animation: none; }
+}
+
 /* ---------- About ---------- */
 .about-layout {
   display: grid;

@@ -11,7 +11,7 @@ const NAV_LINKS = [
 /* The three orbits cross near the middle, so a heavy stroke fills the
    counters in and the mark reads as a blob at nav size. 1.2 keeps the
    orbits open at 22px while still matching the wordmark's weight. */
-const ATOM_MARK = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.6" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>`;
+const ATOM_MARK = `<svg class="atom-mark" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.6" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle class="atom-mark__electron" r="1.2" fill="currentColor" stroke="none"/></svg>`;
 
 function nav(activeKey) {
   const links = NAV_LINKS.map(
