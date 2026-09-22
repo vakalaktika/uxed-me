@@ -43,9 +43,14 @@
     if (!marks.length) return;
 
     function lap(mark) {
-      mark.classList.remove("is-charged");
-      void mark.getBoundingClientRect(); // restart the animation mid-flight
-      mark.classList.add("is-charged");
+      // Restarting both SMIL animations together; beginElement() also
+      // restarts one already in flight, so rapid hovers stay in sync.
+      var anims = mark.querySelectorAll("animateMotion, animate");
+      for (var i = 0; i < anims.length; i++) {
+        if (anims[i].beginElement) {
+          try { anims[i].beginElement(); } catch (e) {}
+        }
+      }
     }
 
     Array.prototype.forEach.call(marks, function (mark) {
@@ -60,9 +65,17 @@
       });
     });
 
-    window.setTimeout(function () {
+    function lapAll() {
       Array.prototype.forEach.call(marks, lap);
-    }, 900);
+    }
+
+    // One lap shortly after load, then an occasional one so it is not missed
+    // by anyone who arrives mid-paint. Paused while the tab is in the
+    // background — nothing animates where no one is looking.
+    window.setTimeout(lapAll, 1200);
+    window.setInterval(function () {
+      if (!document.hidden) lapAll();
+    }, 15000);
   }
 
   function init() {
