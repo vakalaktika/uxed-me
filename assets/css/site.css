@@ -9,8 +9,13 @@
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; }
 img, svg { max-width: 100%; display: block; }
-a { color: var(--primary); }
-a:hover { color: var(--primary-hover); }
+/* Prose links only. These must NOT reach anchors carrying an Atomic Age
+   component class: `a:hover` (0,1,1) outranks `.atm-btn` (0,1,0), so the bare
+   rule repainted every link-button's label --primary-hover on hover, dropping
+   the CTA to 1.22:1 and the primary button to 1:1. The design system owns the
+   color of anything atm-. */
+a:not([class*="atm-"]) { color: var(--primary); }
+a:not([class*="atm-"]):hover { color: var(--primary-hover); }
 main:focus { outline: none; }
 
 .skip-link {
@@ -295,9 +300,22 @@ p { font-family: var(--font-body); font-size: 16px; line-height: 26px; margin: 0
   .article-nav { flex-direction: column; align-items: stretch; margin-top: var(--space-8); }
   .article-nav .atm-btn { width: 100%; }
 
-  /* Tap targets: the small button variant ships at 36px. */
-  .atm-btn--sm { min-height: 44px; }
   .page-footer .atm-link { display: inline-block; padding: var(--space-2) 0; }
+}
+
+/* ---------- Button target size ----------
+   The Button guidelines require a 44px minimum target; .atm-btn--sm draws at
+   36px. Extend the hit area past the painted box instead of resizing it, so
+   the small variant keeps its intended proportions. */
+.atm-btn--sm { position: relative; }
+.atm-btn--sm::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 44px;
 }
 
 /* ---------- Resume ---------- */
