@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Homepage mockups</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f1ede7;--card:#faf7f4;--ink:#2a241d;--ink-2:#5a4f40;--line:rgba(42,36,29,.16);--prod:#c33a26;--friend:#151312}
+@media (prefers-color-scheme:dark){:root{--bg:#151312;--card:#211e1c;--ink:#f3ece0;--ink-2:#b8b0a4;--line:rgba(243,236,224,.14);--friend:#f3ece0}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "DM Sans",system-ui,sans-serif}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto;padding-block:56px 80px}
+h1{font:300 clamp(40px,6vw,72px)/1 Fraunces,Georgia,serif;letter-spacing:-.03em;margin:0}
+.sub{color:var(--ink-2);max-width:60ch;margin:16px 0 40px}
+.scale{display:flex;justify-content:space-between;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.bar{height:6px;border-radius:3px;background:linear-gradient(90deg,#c33a26,#16283a 50%,#e8674a);margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px}
+a.m{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:inherit;text-decoration:none;transition:transform .2s,border-color .2s}
+a.m:hover{transform:translateY(-3px);border-color:#e8674a}
+a.m img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.m div{padding:18px 20px 22px;display:grid;gap:8px}
+.m h2{font:500 22px/1.2 Fraunces,serif;margin:0}
+.m p{margin:0;font-size:14px;color:var(--ink-2)}
+.meter{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink-2)}
+.meter span{flex:1;height:4px;border-radius:2px;background:var(--line);position:relative}
+.meter i{position:absolute;top:-4px;width:12px;height:12px;border-radius:50%;background:#e8674a;transform:translateX(-50%)}
+</style></head>
+<body><main class="wrap">
+<h1>Six homepage directions</h1>
+<p class="sub">Each one blends the production site with your friend’s proposal. 1 leans hardest on what’s live today; 6 is closest to the friend’s design. All use the real copy, images and links.</p>
+<div class="scale"><span>Production</span><span>Friend’s design</span></div><div class="bar"></div>
+<div class="grid">
+<a class="m" href="/mockups/1"><img src="/mockups/img/thumb-1.webp" alt="" loading="lazy"><div><h2>1. Polished production</h2><div class="meter">Prod<span><i style="left:10%"></i></span>Friend</div><p>Today’s site with a few of your friend’s moves: eyebrow-led hero, the coral full-stop, arrow affordances on cards, tags, and a social footer. Lowest risk.</p></div></a>
+<a class="m" href="/mockups/2"><img src="/mockups/img/thumb-2.webp" alt="" loading="lazy"><div><h2>2. Light orbit</h2><div class="meter">Prod<span><i style="left:30%"></i></span>Friend</div><p>Keeps the cream palette, Fraunces and photo, but borrows the friend’s big airy type, floating pill nav and slowly turning orbit lines. Cards get bigger, two-up.</p></div></a>
+<a class="m" href="/mockups/3"><img src="/mockups/img/thumb-3.webp" alt="" loading="lazy"><div><h2>3. Editorial index</h2><div class="meter">Prod<span><i style="left:50%"></i></span>Friend</div><p>Dead centre. Production’s light palette and photography; the friend’s giant light serif, italic accent, filter chips and list-style index — each row now carries a thumbnail so the work still leads.</p></div></a>
+<a class="m" href="/mockups/4"><img src="/mockups/img/thumb-4.webp" alt="" loading="lazy"><div><h2>4. Night hero, day body</h2><div class="meter">Prod<span><i style="left:60%"></i></span>Friend</div><p>The friend’s dramatic first impression — full-bleed dark hero, orbit lines, illustrated portrait, huge serif — but in production’s deep ink-blue. Scroll and you land back on the familiar cream case-study cards.</p></div></a>
+<a class="m" href="/mockups/5"><img src="/mockups/img/thumb-5.webp" alt="" loading="lazy"><div><h2>5. Warm dark, image-led</h2><div class="meter">Prod<span><i style="left:75%"></i></span>Friend</div><p>The friend’s warm-dark world (Caslon, DM Sans, coral, orbits, pill nav, theme toggle) — with production’s real photo in its teal ring and big image-first case-study cards so the homepage still shows the work.</p></div></a>
+<a class="m" href="/mockups/6"><img src="/mockups/img/thumb-6.webp" alt="" loading="lazy"><div><h2>6. Friend’s, tuned</h2><div class="meter">Prod<span><i style="left:90%"></i></span>Friend</div><p>Essentially your friend’s design — dark, full-screen orbits, oversized Caslon, list index with filters — but the work index moves onto the homepage, a hover-preview shows each project’s image, and production’s teal/ink-blue return as quiet accents.</p></div></a>
+</div></main></body></html>
