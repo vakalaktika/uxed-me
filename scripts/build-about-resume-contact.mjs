@@ -23,8 +23,9 @@ const aboutBody = `
     <img src="${aboutPortrait.src}" width="${aboutPortrait.width}" height="${aboutPortrait.height}" alt="Portrait of Ed Guillen" loading="eager">
   </div>
   <div class="prose">
-    <p class="t-body-lg about-lede">I know that communication among developers, management, and marketing can be tough, but I like helping these teams connect. I have experience in these roles and understand how to balance user needs with business goals.</p>
-    <p>I also enjoy <a href="https://www.instagram.com/edmakesbread/" target="_blank" rel="noopener noreferrer">making bread</a>.</p>
+    <p class="t-body-lg about-lede">Developers, product managers and marketers often describe the same problem in different words. I’ve worked alongside all three, and studied marketing for my MBA, so a lot of my job is translation: getting everyone to agree on the problem before we design the answer.</p>
+    <p>I’ve been at EVERFI since 2016, starting as a product designer and now as principal UX designer. Before that I designed apps for drones at 3D Robotics. I work in English and Spanish.</p>
+    <p>When I’m not designing, I’m usually baking. The proof is on <a href="https://www.instagram.com/edmakesbread/" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
     <a class="atm-btn atm-btn--secondary about-cta" href="/resume">View resume</a>
     ${socialLinks()}
   </div>
@@ -36,7 +37,7 @@ writeFileSync(
   page({
     title: "About — Ed Guillen",
     description:
-      "About Ed Guillen, senior product designer based between San Diego and Hong Kong.",
+      "About Ed Guillen, principal UX designer based between San Diego and Hong Kong.",
     activeNav: "about",
     path: "/about",
     bodyHtml: aboutBody,
@@ -104,7 +105,7 @@ const resumeBody = `
   <div class="atm-panel atm-panel--ruled" style="background:transparent;padding:0">
     <section class="atm-panel__section">
       <p class="atm-section-label">About me</p>
-      <p class="t-body" style="color:var(--ink)">I understand that communication between developers, management, and marketing can sometimes be difficult, but I enjoy being the glue that brings departments together. I have worked with and within these different roles, and I understand the complexities of balancing user needs with business goals.</p>
+      <p class="t-body" style="color:var(--ink)">I’ve worked with and within engineering, product and marketing teams, so I’m comfortable being the person who helps them agree on what to build and why, balancing what users need with what the business needs.</p>
     </section>
 
     <section class="atm-panel__section">
@@ -145,7 +146,7 @@ const resumeBody = `
 
     <section class="atm-panel__section">
       <p class="atm-section-label">Personal profile</p>
-      <p class="t-body" style="color:var(--ink)">A creative thinker, a fast learner, and very dependable. I’m always expanding my knowledge in my field and aspire to be the best at what I do. I have ample experience developing teams and managing them to deliver projects on time, and I can manage high-stress situations while adapting to changes in schedule. I have a passion for cooking, baking, traveling, chess, photography, and movies — and I bake one heck of a loaf of bread.</p>
+      <p class="t-body" style="color:var(--ink)">I learn fast and I’ve built and led design teams through tight deadlines and shifting schedules. Outside work: cooking, travel, chess, photography, movies, and one heck of a loaf of bread.</p>
     </section>
   </div>
 </section>
@@ -169,7 +170,7 @@ const contactBody = `
 <section class="atm-container article-header" style="padding-bottom:var(--space-11)">
   <p class="atm-eyebrow">Contact</p>
   <h1>Let’s talk</h1>
-  <p class="t-body-lg lede" style="color:var(--ink-secondary)">The fastest way to reach me is email. I’m happy to talk about design systems, simulation-based learning, or your next case study.</p>
+  <p class="t-body-lg lede" style="color:var(--ink-secondary)">Email is the fastest way to reach me. I’m always up for a conversation about design systems, learning design, or a role you’re hiring for.</p>
   <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3);flex-wrap:wrap">
     <a class="atm-btn atm-btn--cta" href="mailto:ed@uxed.me">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
@@ -184,7 +185,7 @@ writeFileSync(
   path.join(ROOT, "contact.html"),
   page({
     title: "Contact — Ed Guillen",
-    description: "Get in touch with Ed Guillen.",
+    description: "Get in touch with Ed Guillen, principal UX designer.",
     activeNav: "",
     path: "/contact",
     bodyHtml: contactBody,

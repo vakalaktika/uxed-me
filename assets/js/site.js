@@ -1,5 +1,6 @@
-// Mobile nav sheet (open/close/focus/escape) + wires up the Atomic Age
-// runtime helpers used on this site (icon injection, tab panels).
+// Mobile nav sheet (open/close/focus/escape), the light/dark toggle, the
+// home work-index filter, and the Atomic Age runtime helpers used on this
+// site (icon injection, tab panels).
 (function () {
   function initNav() {
     var toggle = document.querySelector("[data-nav-toggle]");
@@ -78,9 +79,57 @@
     }, 15000);
   }
 
+  // Light/dark: follows the OS until the visitor picks one, then remembers
+  // it. The <head> script applies a saved choice before first paint.
+  function initThemeToggle() {
+    var btn = document.querySelector("[data-theme-toggle]");
+    if (!btn) return;
+    var root = document.documentElement;
+    var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+    function current() {
+      return root.dataset.theme || (media && media.matches ? "dark" : "light");
+    }
+    function label() {
+      btn.setAttribute("aria-label", current() === "dark" ? "Switch to light theme" : "Switch to dark theme");
+    }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      try { localStorage.setItem("uxed-theme", next); } catch (e) {}
+      label();
+    });
+    if (media && media.addEventListener) media.addEventListener("change", label);
+    label();
+  }
+
+  // Home work index: chips filter rows by tag and announce the count.
+  function initWorkFilter() {
+    var group = document.querySelector("[data-work-filter]");
+    if (!group) return;
+    var rows = document.querySelectorAll("[data-tags]");
+    var status = document.querySelector("[data-work-filter-status]");
+    group.addEventListener("click", function (e) {
+      var btn = e.target.closest("button");
+      if (!btn) return;
+      var tag = btn.getAttribute("data-filter");
+      Array.prototype.forEach.call(group.querySelectorAll("button"), function (b) {
+        b.setAttribute("aria-pressed", String(b === btn));
+      });
+      var shown = 0;
+      Array.prototype.forEach.call(rows, function (row) {
+        var match = tag === "all" || row.getAttribute("data-tags").split("|").indexOf(tag) !== -1;
+        row.hidden = !match;
+        if (match) shown++;
+      });
+      if (status) status.textContent = shown + (shown === 1 ? " project" : " projects") + " shown";
+    });
+  }
+
   function init() {
     initNav();
     initAtomMark();
+    initThemeToggle();
+    initWorkFilter();
   }
 
   if (document.readyState === "loading") {

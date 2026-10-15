@@ -25,6 +25,10 @@ function nav(activeKey) {
 <nav class="atm-topnav">
   <a class="atm-topnav__brand" href="/">${ATOM_MARK} Ed Guillen</a>
   <div class="atm-topnav__links">${links}</div>
+  <button class="atm-iconbtn theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark theme">
+    <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
   <a class="atm-btn atm-btn--sm atm-btn--secondary" href="/contact">Contact</a>
   <button class="atm-iconbtn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-sheet" aria-label="Open menu">
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -44,10 +48,20 @@ function nav(activeKey) {
 </div>`;
 }
 
+export const SOCIAL = [
+  { label: "Email", href: "mailto:ed@uxed.me" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/eduardoguillenux" },
+  { label: "read.cv", href: "https://read.cv/uxed" },
+  { label: "Instagram", href: "https://www.instagram.com/edmakesbread/" },
+];
+
+const external = (href) => (href.startsWith("http") ? ' target="_blank" rel="noopener noreferrer"' : "");
+
 const FOOTER = `
 <footer class="page-footer">
   <div class="atm-container">
     <p class="t-body-sm" style="color:var(--ink-muted)">&copy; ${new Date().getFullYear()} Ed Guillen</p>
+    <nav class="page-footer__links" aria-label="Elsewhere">${SOCIAL.map((l) => `<a href="${l.href}"${external(l.href)}>${l.label}</a>`).join("")}</nav>
   </div>
 </footer>`;
 
@@ -60,7 +74,11 @@ export function page({ title, description, activeNav, bodyHtml, path = "/" }) {
 <title>${title}</title>
 <meta name="description" content="${description}">
 <link rel="canonical" href="https://www.uxed.me${path}">
+<script>try{var t=localStorage.getItem("uxed-theme")}catch(e){}if(t==="light"||t==="dark")document.documentElement.dataset.theme=t</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&display=swap">
 <link rel="stylesheet" href="/assets/atomic-age/tokens.css">
+<link rel="stylesheet" href="/assets/css/theme.css">
 <link rel="stylesheet" href="/assets/atomic-age/bundle.css">
 <link rel="stylesheet" href="/assets/css/site.css">
 </head>
