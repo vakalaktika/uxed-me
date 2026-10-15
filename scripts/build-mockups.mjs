@@ -47,7 +47,7 @@ const orbitCss = (stroke, sw = 0.25, e = "var(--accent)") => `
 @keyframes spin{to{transform:rotate(360deg)}}`;
 
 const arrow = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
-const themeBtn = `<button class="theme" type="button" aria-label="Toggle light and dark theme" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='light'?'dark':'light'"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>`;
+const themeBtn = `<button class="theme" type="button" aria-label="Toggle light and dark theme" onclick="var r=document.documentElement,t=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('uxed-theme',t)}catch(e){}"><svg class="t-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="t-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>`;
 
 const nav = ({ toggle = false } = {}) => `<header class="nav"><div class="nav__in">
   <a class="brand" href="/">${atom(24)}<span>Ed Guillen</span></a>
@@ -83,6 +83,7 @@ ul{margin:0;padding:0;list-style:none}
 .nav__end{display:flex;align-items:center;gap:10px}
 .theme{width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;display:grid;place-items:center;cursor:pointer}
 .theme:hover{color:var(--accent)}
+.t-sun{display:none}.t-moon{display:block}[data-theme=dark] .t-sun{display:block}[data-theme=dark] .t-moon{display:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags li{font-family:var(--ui);font-size:12px;padding:3px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
 .foot{border-top:1px solid var(--line);margin-top:96px}
@@ -108,12 +109,13 @@ const FONTS = {
 };
 
 const doc = ({ n, title, fonts, css, body, theme }) => `<!doctype html>
-<html lang="en"${theme ? ` data-theme="${theme}"` : ""}>
+<html lang="en"${theme && theme !== "auto" ? ` data-theme="${theme}"` : ""}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Mockup ${n} · ${title}</title>
+${theme === "auto" ? `<script>try{var t=localStorage.getItem("uxed-theme")}catch(e){}document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")</script>` : ""}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?${FONTS[fonts]}&display=swap">
 <style>
@@ -284,7 +286,11 @@ variants.push({
   skew: 50,
   pitch: "Dead centre. Production’s light palette and photography; the friend’s giant light serif, italic accent, filter chips and list-style index — each row now carries a thumbnail so the work still leads.",
   fonts: "mix",
-  css: `:root{${FRIEND_LIGHT};--bg:#f1ede7;--card:#faf7f4;--accent:#b4432a;--accent-hover:#9a3822;--display:"Fraunces",Georgia,serif;--ui:"DM Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif}
+  theme: "auto",
+  css: `:root{${FRIEND_LIGHT};--bg:#f1ede7;--card:#faf7f4;--accent:#b4432a;--accent-hover:#9a3822;--display:"Fraunces",Georgia,serif;--ui:"DM Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif;color-scheme:light}
+[data-theme=dark]{--bg:#151312;--card:#211e1c;--ink:#f3ece0;--ink-2:#b8b0a4;--line:rgba(243,236,224,.14);--accent:#e8674a;--accent-hover:#f07d61;--on-accent:#151312;--teal:#4bc2b0;color-scheme:dark}
+[data-theme=dark] .row__thumb{background:#2a2521}
+[data-theme=dark] .row__thumb img{filter:brightness(.88)}[data-theme=dark] .row:hover .row__thumb img{filter:none}
 .nav{background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px)}
 .nav__in{width:min(1200px,100% - 32px);margin-inline:auto;border-bottom:1px solid var(--line)}
 .hero{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:end;padding-block:90px 70px;border-bottom:1px solid var(--line)}
@@ -309,7 +315,7 @@ ${ROW_CSS}
 .row__client{padding-top:0}
 @media (max-width:1000px){.row__client{display:none}.row{grid-template-columns:160px 1fr 48px}.row__desc{display:none}}
 @media (max-width:860px){.hero{grid-template-columns:1fr}.row{grid-template-columns:110px 1fr 40px;gap:16px}.row__go{grid-row:auto;grid-column:auto;width:40px;height:40px}}`,
-  body: () => `${nav()}
+  body: () => `${nav({ toggle: true })}
 <main class="wrap">
 <section class="hero">
   <h1>Hi, I’m <br><em>Ed.</em></h1>
