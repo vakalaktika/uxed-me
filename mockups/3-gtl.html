@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mockup 3B · Editorial index · Good Times Lab</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400..700;1,400..700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;transition:background .35s,color .35s}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.eyebrow{font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ui);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:16px 30px;border-radius:999px;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn--cta{background:var(--accent);color:var(--on-accent)}.btn--cta:hover{background:var(--accent-hover)}
+.btn--ghost{border-color:currentColor}.btn--ghost:hover{color:var(--accent)}
+.btn--sm{padding:9px 18px;font-size:12px;border-radius:8px;min-height:44px}
+.nav{position:sticky;top:0;z-index:20}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:20px}
+.brand .atom{color:var(--accent);flex:none}
+.links{display:flex;gap:28px;font-family:var(--ui);font-size:15px}
+.links a{opacity:.75;padding:6px 0;border-bottom:2px solid transparent}.links a:hover{opacity:1}
+.links a[aria-current]{opacity:1;border-color:var(--accent)}
+.nav__end{display:flex;align-items:center;gap:10px}
+.theme{width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;display:grid;place-items:center;cursor:pointer}
+.theme:hover{color:var(--accent)}
+.t-sun{display:none}.t-moon{display:block}[data-theme=dark] .t-sun{display:block}[data-theme=dark] .t-moon{display:none}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font-family:var(--ui);font-size:12px;padding:3px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2)}
+.foot{border-top:1px solid var(--line);margin-top:96px}
+.foot__in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-block:36px;font-family:var(--ui);font-size:13px;color:var(--ink-2)}
+.foot nav{display:flex;gap:26px;flex-wrap:wrap}
+.foot nav a{letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:12px}.foot nav a:hover{color:var(--accent)}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid currentColor;border-radius:999px;background:none;color:inherit;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px}
+.menu-btn span{display:block;width:18px;height:1.5px;background:currentColor;transition:transform .2s}
+.menu-btn[aria-expanded=true] span:first-child{transform:translateY(3.75px) rotate(45deg)}.menu-btn[aria-expanded=true] span:last-child{transform:translateY(-3.75px) rotate(-45deg)}
+.sheet{display:grid;padding:8px 16px 24px;background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line)}
+.sheet[hidden]{display:none}
+.sheet a{font-family:var(--display);font-size:34px;line-height:1.2;padding:8px 0}.sheet a[aria-current]{color:var(--accent)}
+@media (max-width:760px){.links,.nav__end .btn--sm{display:none}.menu-btn{display:flex}body{font-size:16px}}
+@media (min-width:761px){.sheet{display:none!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+:root{--cream:#F5E7CF;--seaglass:#B7CDCE;--rust:#CC522F;--mustard:#E0A63A;--avocado:#8C9A4B;--ink-0:#060809;
+--bg:#F5E7CF;--card:#FCF6EA;--sunken:#EBDABD;--ink:#060809;--ink-2:#4A4F52;--line:#D6C3A3;--line-strong:#060809;
+--accent:#A8401F;--rust-text:#A8401F;--rust-soft:#F4D9C6;--seaglass-text:#365E60;--seaglass-soft:#DCE7E5;--mustard-text:#79500F;--mustard-soft:#F7E1B0;
+--on-accent:#060809;--accent-hover:#CC522F;--display:"Jost","Futura","Century Gothic",sans-serif;--ui:var(--display);--body:var(--display);--mono:"Space Mono",ui-monospace,Menlo,monospace;
+--print-sm:3px 3px 0 #060809;--print:6px 6px 0 #060809;--focus:0 0 0 2px #F5E7CF,0 0 0 4px #060809;--ease:cubic-bezier(0.22,1,0.36,1)}
+body{font-size:16px;line-height:26px}
+:focus-visible{outline:none;box-shadow:var(--focus);border-radius:0}
+.eyebrow{font-size:13px;line-height:16px;font-weight:600;letter-spacing:.24em;color:var(--rust-text)}
+.nav{background:var(--bg);border-bottom:2px solid var(--line-strong)}
+.nav__in{width:min(1200px,100% - 32px);margin-inline:auto;height:72px}
+.brand{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:.14em;text-transform:uppercase;gap:12px}
+.brand__mark{position:relative;width:34px;height:34px;flex:none}
+.brand__mark svg{position:absolute;width:26px;height:26px}
+.brand__mark .h1{left:0;top:0}.brand__mark .h2{left:8px;top:8px}
+.links{gap:32px}
+.links a{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:1;border-bottom:4px solid transparent;border-radius:0;padding:6px 0}
+.links a:hover{color:var(--rust-text)}
+.links a[aria-current]{border-color:var(--rust)}
+.btn{font-size:14px;line-height:16px;letter-spacing:.08em;padding:14px 26px;border-radius:9999px;border:2px solid var(--ink);min-height:48px;transition:transform .15s var(--ease),box-shadow .15s var(--ease),background .15s ease-out}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:var(--print-sm)}
+.btn:active{transform:none;box-shadow:none}
+.btn--cta{background:var(--rust);color:var(--ink)}.btn--cta:hover{background:var(--rust)}
+.btn--ghost{background:transparent;color:var(--ink)}.btn--ghost:hover{color:var(--ink);background:var(--seaglass)}
+.btn--sm{padding:10px 20px;font-size:13px;border-radius:9999px;min-height:44px}
+.menu-btn{border-width:2px}
+.sheet{border-bottom:2px solid var(--ink)}
+.sheet a{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.02em}
+.sheet a[aria-current]{color:var(--rust-text)}
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;padding-block:96px 96px}
+.hero h1{font-weight:500;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(52px,7.4vw,88px);line-height:.95}
+.hero h1 .r{color:var(--rust-text)}
+.hero__lede{font-size:19px;line-height:30px;color:var(--ink-2);max-width:36ch;margin-top:28px}
+.actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+.hero__art{position:relative;aspect-ratio:1;max-width:460px;width:100%;justify-self:end}
+.hero__art .hx{position:absolute}
+.hx--back{width:74%;left:0;top:4%}
+.hx--front{width:74%;right:0;bottom:0}
+.hero__portrait{position:absolute;width:62%;right:6%;bottom:6%;aspect-ratio:1;clip-path:polygon(50% 2%,93% 26%,93% 74%,50% 98%,7% 74%,7% 26%);background:var(--ink)}
+.hero__portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);mix-blend-mode:normal}
+.hero__portrait::after{content:"";position:absolute;inset:0;background:var(--seaglass);mix-blend-mode:multiply}
+.burst{position:absolute;width:22%;left:6%;bottom:8%}
+.hero__tag{position:absolute;left:2%;top:46%;font:400 13px/1 var(--mono);background:var(--card);border:2px solid var(--ink);padding:8px 12px;box-shadow:var(--print-sm)}
+/* divider: pill rule with a one-word label */
+.divider{display:flex;align-items:center;gap:20px}
+.divider::before,.divider::after{content:"";flex:1;height:4px;border-radius:9999px;background:var(--ink)}
+/* section */
+.sec{padding-top:64px}
+.sec__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin:56px 0 32px}
+.sec h2{font-weight:500;font-size:36px;line-height:1.1;letter-spacing:.01em;margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:600 13px/16px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:transparent;border:2px solid var(--ink);border-radius:9999px;padding:12px 18px;min-height:44px;cursor:pointer;transition:background .15s ease-out}
+.chips button:hover{background:var(--seaglass-soft)}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--cream)}
+.rows{border-top:2px solid var(--ink)}
+.rows li{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:64px 200px minmax(0,1fr) minmax(0,1fr) 52px;gap:28px;align-items:center;padding:28px 0}
+.row__no{font:400 13px/1 var(--mono);color:var(--ink-2)}
+.row__thumb{display:block;aspect-ratio:4/3;border:2px solid var(--ink);background:var(--seaglass);overflow:hidden;transition:transform .15s var(--ease),box-shadow .15s var(--ease)}
+.row__thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);mix-blend-mode:multiply;transition:filter .25s ease-out}
+.row:hover .row__thumb{transform:translate(-3px,-3px);box-shadow:var(--print)}
+.row:hover .row__thumb img{filter:none;mix-blend-mode:normal}
+.row__title{display:grid;gap:8px;justify-items:start}
+.row__h{font-size:24px;line-height:1.2;font-weight:600}
+.row:hover .row__h{color:var(--rust-text)}
+.row__eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.badge{font:600 12px/14px var(--display);letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:9999px}
+.badge--rust{background:var(--rust-soft);color:var(--rust-text)}
+.badge--seaglass{background:var(--seaglass-soft);color:var(--seaglass-text)}
+.badge--mustard{background:var(--mustard-soft);color:var(--mustard-text)}
+.row__desc{display:grid;gap:14px;color:var(--ink-2)}
+.tags li{font:600 11px/14px var(--display);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink-2);color:var(--ink-2)}
+.row__go{width:52px;height:52px;border-radius:9999px;border:2px solid var(--ink);display:grid;place-items:center;transition:transform .15s var(--ease),box-shadow .15s var(--ease),background .15s ease-out}
+.row:hover .row__go{background:var(--rust);transform:translate(-2px,-2px);box-shadow:var(--print-sm)}
+/* footer as the inverse badge */
+.foot{margin-top:120px;border:0;background:var(--ink);color:var(--cream)}
+.foot__in{color:var(--cream);padding-block:48px}
+.foot nav a{font-size:13px;letter-spacing:.08em}
+.foot nav a:hover{color:var(--rust)}
+.foot__cta{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-block:72px 48px;border-bottom:1px solid #2A2F31}
+.foot__cta p{font-weight:500;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(36px,5vw,56px);line-height:1}
+.foot .btn--cta{border-color:var(--cream)}
+.foot .btn--cta:hover{box-shadow:3px 3px 0 var(--cream)}
+@media (max-width:1000px){.row{grid-template-columns:48px 160px 1fr 52px}.row__desc{display:none}}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-block:56px}.hero__art{justify-self:center;max-width:340px;order:-1}.row{grid-template-columns:112px 1fr 44px;gap:16px}.row__no{display:none}.row__h{font-size:19px}.row__go{width:44px;height:44px}}
+@media (max-width:600px){.hero h1{font-size:clamp(40px,11.5vw,52px)}.sec h2{font-size:30px}}
+.mock-badge{position:fixed;left:12px;bottom:12px;z-index:50;font:600 11px/1 system-ui,sans-serif;letter-spacing:.06em;background:#111;color:#fff;padding:8px 10px;border-radius:6px;opacity:.85}
+.mock-badge a{color:#fff;text-decoration:underline}
+</style>
+</head>
+<body>
+<header class="nav"><div class="nav__in">
+  <a class="brand" href="/"><span class="brand__mark"><svg class="h1" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 93,26 93,74 50,98 7,74 7,26" fill="var(--seaglass)"/></svg><svg class="h2" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 93,26 93,74 50,98 7,74 7,26" fill="var(--rust)"/></svg></span><span>Ed Guillen</span></a>
+  <nav class="links" aria-label="Primary"><a href="/" aria-current="page">Work</a><a href="/resume">Resume</a><a href="/about">About</a></nav>
+  <div class="nav__end"><a class="btn btn--ghost btn--sm" href="/contact">Contact</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-sheet" aria-label="Menu" onclick="var o=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',!o);document.getElementById('nav-sheet').hidden=o"><span></span><span></span></button></div>
+</div><nav class="sheet" id="nav-sheet" aria-label="Primary" hidden><a href="/" aria-current="page">Work</a><a href="/resume">Resume</a><a href="/about">About</a><a href="/contact">Contact</a></nav></header>
+<main class="wrap">
+<section class="hero">
+  <div><p class="eyebrow">Senior product designer</p><h1 style="margin-top:20px">Hi, I’m <br><span class="r">Ed.</span></h1><p class="hero__lede">I bring systems thinking, empathy, and strategic clarity to help teams design smarter, build with purpose, and stay aligned. Also, I bake sourdough.</p>
+  <div class="actions"><a class="btn btn--cta" href="#work">See the work</a><a class="btn btn--ghost" href="/about">About me</a></div></div>
+  <div class="hero__art"><svg class="hx hx--back" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 93,26 93,74 50,98 7,74 7,26" fill="var(--seaglass)"/></svg><svg class="hx hx--front" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,2 93,26 93,74 50,98 7,74 7,26" fill="var(--rust)"/></svg><div class="hero__portrait"><img src="/assets/img/home/9e8ac426-ed1.webp" alt="Portrait of Ed Guillen"></div><svg class="burst" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="var(--mustard)" points="50.0,0.0 57.8,21.0 75.0,6.7 71.2,28.8 93.3,25.0 79.0,42.2 100.0,50.0 79.0,57.8 93.3,75.0 71.2,71.2 75.0,93.3 57.8,79.0 50.0,100.0 42.2,79.0 25.0,93.3 28.8,71.2 6.7,75.0 21.0,57.8 0.0,50.0 21.0,42.2 6.7,25.0 28.8,28.8 25.0,6.7 42.2,21.0"/></svg><span class="hero__tag">7 projects</span></div>
+</section>
+<div class="divider"><p class="eyebrow">Work</p></div>
+<section class="sec" id="work"><div class="sec__head"><h2>Selected work</h2><div class="chips" role="group" aria-label="Filter work"><button type="button" aria-pressed="true">All</button><button type="button">Design system</button><button type="button">UX</button><button type="button">IA</button><button type="button">Learning</button><button type="button">Mobile</button><button type="button">Hardware</button><button type="button">Game</button></div></div>
+<ul class="rows"><li data-tags="Design system|UX"><a class="row" href="/cards-pattern">
+  <span class="row__no">No. 01</span>
+  <span class="row__thumb"><img src="/assets/img/home/e577fd47-cards-case-study.webp" alt="" loading="lazy" width="400" height="300"></span>
+  <span class="row__title"><span class="badge badge--rust">EVERFI</span><span class="row__h">Unifying EVERFI’s card component</span><span class="row__eyebrow">Design systems</span></span>
+  <span class="row__desc">Designing a cohesive and scalable card pattern across the EVERFI product ecosystem.<ul class="tags"><li>Design system</li><li>UX</li></ul></span>
+  <span class="row__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a></li><li data-tags="UX|Interaction|Learning"><a class="row" href="/simulation-based-learning">
+  <span class="row__no">No. 02</span>
+  <span class="row__thumb"><img src="/assets/img/home/ca94c176-simulation-based-learning.webp" alt="" loading="lazy" width="400" height="300"></span>
+  <span class="row__title"><span class="badge badge--rust">EVERFI</span><span class="row__h">Simulation-based learning</span><span class="row__eyebrow">UX · Interaction design</span></span>
+  <span class="row__desc">Immersive and engaging learning through realistic scenario-based experiences.<ul class="tags"><li>UX</li><li>Interaction</li><li>Learning</li></ul></span>
+  <span class="row__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a></li><li data-tags="Process|IA|Learning"><a class="row" href="/course-building-process">
+  <span class="row__no">No. 03</span>
+  <span class="row__thumb"><img src="/assets/img/home/be21c4ec-process-case-study.webp" alt="" loading="lazy" width="400" height="300"></span>
+  <span class="row__title"><span class="badge badge--rust">EVERFI</span><span class="row__h">Course building process design</span><span class="row__eyebrow">IA · Process design</span></span>
+  <span class="row__desc">How EVERFI creates impactful learning experiences.<ul class="tags"><li>Process</li><li>IA</li><li>Learning</li></ul></span>
+  <span class="row__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a></li><li data-tags="Design system|IA|Docs"><a class="row" href="/elements">
+  <span class="row__no">No. 04</span>
+  <span class="row__thumb"><img src="/assets/img/home/51b0f96e-elements-case-study.webp" alt="" loading="lazy" width="400" height="300"></span>
+  <span class="row__title"><span class="badge badge--rust">EVERFI</span><span class="row__h">Cohesive documentation design</span><span class="row__eyebrow">Design systems · IA</span></span>
+  <span class="row__desc">Creating a documentation toolkit to help new and current team members.<ul class="tags"><li>Design system</li><li>IA</li><li>Docs</li></ul></span>
+  <span class="row__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a></li><li data-tags="Mobile|Hardware"><a class="row" href="/solo-app-case-studies">
+  <span class="row__no">No. 05</span>
+  <span class="row__thumb"><img src="/assets/img/home/af9f4514-image-asset.webp" alt="" loading="lazy" width="400" height="300"></span>
+  <span class="row__title"><span class="badge badge--seaglass">3DR</span><span class="row__h">3DR Solo App</span><span class="row__eyebrow">Product design</span></span>
+  <span class="row__desc">Mobile companion app for the Solo smart drone: flight controls, camera, and autonomous shot modes.<ul class="tags"><li>Mobile</li><li>Hardware</li></ul></span>
+  <span class="row__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a></li><li data-tags="Tablet|Hardware"><a class="row" href="/site-scan">
+  <span class="row__no">No. 06</span>
+  <span class="row__thumb"><img src="/assets/img/home/9ef89ff3-image-asset.webp" alt="" loading="lazy" width="400" height="300"></span>
+  <span class="row__title"><span class="badge badge--seaglass">3DR</span><span class="row__h">SiteScan App</span><span class="row__eyebrow">Product design</span></span>
+  <span class="row__desc">Tablet app for planning and capturing aerial site surveys for construction and engineering teams.<ul class="tags"><li>Tablet</li><li>Hardware</li></ul></span>
+  <span class="row__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a></li><li data-tags="Game|AR"><a class="row" href="/atat-attack">
+  <span class="row__no">No. 07</span>
+  <span class="row__thumb"><img src="/assets/img/home/84f0ef93-at-at-concept.webp" alt="" loading="lazy" width="400" height="300"></span>
+  <span class="row__title"><span class="badge badge--mustard">Side project</span><span class="row__h">AT-AT Attack</span><span class="row__eyebrow">Game design</span></span>
+  <span class="row__desc">An augmented reality drone game, built for fun and for practising motion and interaction design.<ul class="tags"><li>Game</li><li>AR</li></ul></span>
+  <span class="row__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a></li></ul></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="foot__cta"><p>Let’s make<br>something good.</p><a class="btn btn--cta" href="/contact">Get in touch</a></div>
+<div class="foot__in"><span>© 2026 Ed Guillen</span><nav aria-label="Social"><a href="/contact">Email</a><a href="https://www.linkedin.com/in/edguillen">LinkedIn</a><a href="https://read.cv">Read.cv</a><a href="https://instagram.com">Instagram</a></nav></div></div></footer><script>
+document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));const f=b.textContent;
+document.querySelectorAll('[data-tags]').forEach(li=>{li.hidden=f!=='All'&&!li.dataset.tags.split('|').includes(f)})}));
+</script>
+<div class="mock-badge">Mockup 3B · Editorial index · Good Times Lab · <a href="/mockups/">all</a></div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { page, caseCard, socialLinks } from "./layout.mjs";
+import { page } from "./layout.mjs";
 import { img } from "./img.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -9,133 +9,125 @@ const ROOT = path.join(__dirname, "..");
 
 const portrait = img("home", "9e8ac426-621a-44eb-abfd-1e0b8f384e92-Ed1.png");
 
-const featured = [
+// Every project on the home index, newest client first. `tags` drive the
+// filter chips; keep them to the chip vocabulary in FILTERS below.
+const work = [
   {
     href: "/cards-pattern",
     img: img("home", "e577fd47-4d5e-446d-9df1-3d7ab5fa4de5-cards-case-study.png"),
-    alt: "Grid of EVERFI course and pathway cards shown in the unified card component",
+    client: "EVERFI",
     eyebrow: "Design systems",
     title: "Unifying EVERFI’s card component",
-    body: "Designing a cohesive and scalable card pattern across the EVERFI product ecosystem.",
+    body: "One card component for every EVERFI product, built to handle different content, metadata and use cases.",
+    tags: ["Design system", "UX"],
   },
   {
     href: "/simulation-based-learning",
     img: img("home", "ca94c176-0cee-465d-8ccf-277354a4b764-simulation-based-learning.png"),
-    alt: "Screens from a realistic scenario-based simulation learning experience",
+    client: "EVERFI",
     eyebrow: "UX · Interaction design",
     title: "Simulation-based learning",
-    body: "Immersive and engaging learning through realistic scenario-based experiences.",
+    body: "A simulation where learners make decisions, see their impact, and practise a skill before they need it.",
+    tags: ["UX", "Interaction", "Learning"],
   },
   {
     href: "/course-building-process",
     img: img("home", "be21c4ec-a4b0-4a65-bc79-606aa1e37515-process-case-study.png"),
-    alt: "Diagram mapping the course building process across teams",
+    client: "EVERFI",
     eyebrow: "IA · Process design",
     title: "Course building process design",
-    body: "How EVERFI creates impactful learning experiences.",
+    body: "A map of how a course gets built at EVERFI, made from interviews with every team that touches one.",
+    tags: ["Process", "IA", "Learning"],
   },
   {
     href: "/elements",
     img: img("home", "51b0f96e-13a8-43d8-bb5a-807f2c3eb7e4-elements-case-study.png"),
-    alt: "Elements design system documentation toolkit overview",
+    client: "EVERFI",
     eyebrow: "Design systems · IA",
     title: "Cohesive documentation design",
-    body: "Creating a documentation toolkit to help new and current team members.",
+    body: "An information architecture for EVERFI’s design-system docs, so new and current team members can find what they need.",
+    tags: ["Design system", "IA"],
   },
-];
-
-const otherWork = [
   {
     href: "/solo-app-case-studies",
     img: img("home", "af9f4514-12f1-4065-bc6a-296cd6898ea0-image-asset.jpg"),
-    alt: "3DR Solo drone companion app interface",
+    client: "3DR",
+    eyebrow: "Interaction design",
     title: "3DR Solo App",
+    body: "A mobile app for aerial photography, where computer-assisted Smart Shots let you concentrate on capturing, not flying.",
+    tags: ["Mobile", "Hardware", "Interaction"],
   },
   {
     href: "/site-scan",
     img: img("home", "9ef89ff3-e8bc-49ae-a1c4-dceba0191a21-image-asset.jpg"),
-    alt: "SiteScan aerial analytics platform interface",
+    client: "3DR",
+    eyebrow: "Interaction design",
     title: "SiteScan App",
+    body: "An aerial analytics platform for surveying, scanning and inspecting work sites, while keeping inspectors safe on the ground.",
+    tags: ["Hardware", "UX"],
   },
   {
     href: "/atat-attack",
     img: img("home", "84f0ef93-4ae9-4eae-8446-136ee59b6141-at-at-concept.jpg"),
-    alt: "Concept art for AT-AT Attack, an augmented reality drone game",
+    client: "Side project",
+    eyebrow: "Game design",
     title: "AT-AT Attack",
+    body: "An augmented reality drone game. What happens when fandom and free time collide.",
+    tags: ["Game", "Interaction"],
   },
 ];
 
-const body = `
-<section class="atm-container hero atm-boot">
-  <div class="hero__desktop">
-    <div class="hero__content">
-      <h1 class="hero__heading atm-boot__1">Hi, I’m Ed.</h1>
-      <p class="hero__role atm-boot__2">Senior product designer</p>
-      <p class="hero__lede atm-boot__2">I bring systems thinking, empathy, and strategic clarity to help teams design smarter, build with purpose, and stay aligned. Also, I bake sourdough.</p>
-      <div class="hero__actions atm-boot__3">
-        <a class="atm-btn atm-btn--cta" href="#work">See the work</a>
-        <a class="atm-btn atm-btn--secondary" href="/about">About me</a>
-      </div>
-    </div>
-    <div class="hero__panel atm-boot__4">
-      <svg class="hero__panel-motif atm-motif atm-orbit" viewBox="0 0 24 24" width="620" height="620" fill="none" stroke="currentColor" stroke-width="0.35" aria-hidden="true" focusable="false">
-        <ellipse cx="12" cy="12" rx="10" ry="4"/>
-        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
-        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
-      </svg>
-      <div class="hero__panel-portrait">
-        <img src="${portrait.src}" width="${portrait.width}" height="${portrait.height}" alt="Portrait of Ed Guillen" loading="eager">
-      </div>
-    </div>
-  </div>
+const FILTERS = ["Design system", "UX", "Interaction", "IA", "Learning", "Mobile", "Hardware", "Game"];
 
-  <div class="hero__mobile">
-    <div class="hero__badge atm-boot__1">
-      <svg class="hero__badge-motif atm-motif atm-orbit" viewBox="0 0 24 24" width="132" height="132" fill="none" stroke="currentColor" stroke-width="0.8" aria-hidden="true" focusable="false">
-        <ellipse cx="12" cy="12" rx="10" ry="4"/>
-        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
-        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
-      </svg>
-      <div class="hero__badge-portrait">
-        <img src="${portrait.src}" width="${portrait.width}" height="${portrait.height}" alt="Portrait of Ed Guillen" loading="eager">
-      </div>
-    </div>
-    <h1 class="hero__heading atm-boot__2">Hi, I’m Ed.</h1>
-    <p class="hero__role atm-boot__2">Senior product designer</p>
-    <p class="hero__lede atm-boot__3">I bring systems thinking, empathy, and strategic clarity to help teams design smarter, build with purpose, and stay aligned. Also, I bake sourdough.</p>
-    <div class="hero__actions atm-boot__4">
+const ARROW = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+
+const row = (w) => `<li data-tags="${w.tags.join("|")}">
+      <a class="work-row" href="${w.href}">
+        <span class="work-row__thumb"><img src="${w.img.src}" width="${w.img.width}" height="${w.img.height}" alt="" loading="lazy"></span>
+        <span class="work-row__client"><b aria-hidden="true">${w.client[0]}</b>${w.client}</span>
+        <div class="work-row__title"><h3>${w.title}</h3><span class="atm-eyebrow">${w.eyebrow}</span></div>
+        <span class="work-row__desc"><span>${w.body}</span><span class="work-row__tags">${w.tags.map((t) => `<span>${t}</span>`).join("")}</span></span>
+        <span class="work-row__go" aria-hidden="true">${ARROW}</span>
+      </a>
+    </li>`;
+
+const body = `
+<div class="atm-container">
+<section class="home-hero">
+  <h1 class="home-hero__title">Hi, I’m <br><em>Ed.</em></h1>
+  <div class="home-hero__side">
+    <p class="home-hero__me"><img src="${portrait.src}" width="${portrait.width}" height="${portrait.height}" alt="" loading="eager"><span><b>Ed Guillen</b>Principal UX designer</span></p>
+    <p class="home-hero__lede">I’m a principal UX designer at EVERFI, where I work on the systems behind our digital courses: shared components, documentation, and the process teams follow to build a course. Before that, I designed drone apps at 3D Robotics. Also, I bake sourdough.</p>
+    <div class="home-hero__actions">
       <a class="atm-btn atm-btn--cta" href="#work">See the work</a>
       <a class="atm-btn atm-btn--secondary" href="/about">About me</a>
     </div>
   </div>
 </section>
 
-<section id="work" class="section atm-container">
-  <p class="atm-eyebrow">Selected work</p>
-  <h2 style="margin-top:var(--space-3)">EVERFI case studies</h2>
-  <div class="case-grid" style="margin-top:var(--space-7)">
-    ${featured.map(caseCard).join("\n    ")}
+<section class="work-index" id="work" aria-labelledby="work-title">
+  <div class="work-index__head">
+    <div><p class="atm-eyebrow">Index</p><h2 id="work-title">Selected <em>work</em></h2></div>
+    <div class="filter-chips" role="group" aria-label="Filter projects" data-work-filter>
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      ${FILTERS.map((f) => `<button type="button" data-filter="${f}" aria-pressed="false">${f}</button>`).join("\n      ")}
+    </div>
   </div>
+  <p class="visually-hidden" role="status" data-work-filter-status></p>
+  <ul class="work-rows">
+    ${work.map(row).join("\n    ")}
+  </ul>
+  <div class="work-index__more"><a class="atm-btn atm-btn--secondary" href="/other-work">Explore my other work</a></div>
 </section>
-
-<section class="section atm-container">
-  <p class="atm-eyebrow">Other work</p>
-  <h2 style="margin-top:var(--space-3)">Drones, games, and side projects</h2>
-  <div class="case-grid" style="margin-top:var(--space-7)">
-    ${otherWork.map((c) => caseCard({ ...c, body: undefined })).join("\n    ")}
-  </div>
-  <div style="margin-top:var(--space-8)">
-    <a class="atm-btn atm-btn--secondary" href="/other-work">Explore my other work</a>
-  </div>
-</section>
+</div>
 `;
 
 writeFileSync(
   path.join(ROOT, "index.html"),
   page({
-    title: "Ed Guillen — Senior Product Designer",
+    title: "Ed Guillen — Principal UX Designer",
     description:
-      "Portfolio of Ed Guillen, senior product designer. Systems thinking, design systems, information architecture, and simulation-based learning UX.",
+      "Ed Guillen, principal UX designer at EVERFI. Design systems, information architecture and simulation-based learning.",
     activeNav: "work",
     path: "/",
     bodyHtml: body,
