@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Option 3 · side by side</title>
+<style>
+:root{--bg:#1b1a19;--ink:#f3ece0;--ink-2:#b8b0a4;--line:rgba(243,236,224,.16)}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line)}
+h1{font-size:15px;margin:0;font-weight:600}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{font:inherit;color:inherit;background:none;border:0;padding:10px 16px;min-height:40px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px;height:calc(100% - 66px)}
+.pane{display:flex;flex-direction:column;min-width:0;min-height:0}
+.pane p{margin:0 0 8px;display:flex;justify-content:space-between;color:var(--ink-2)}
+.pane p b{color:var(--ink)}
+.pane a{color:var(--ink-2)}
+.frame{flex:1;min-height:0;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#fff;position:relative}
+iframe{border:0;position:absolute;left:0;top:0;transform-origin:0 0}
+.mobile .frame{background:transparent;border:0}
+.mobile iframe{position:relative;margin:0 auto;display:block;transform:none!important;width:390px!important;height:100%!important;border:1px solid var(--line);border-radius:24px;background:#fff}
+@media (max-width:800px){.grid{grid-template-columns:1fr;height:auto}.frame{height:80vh}}
+</style></head>
+<body>
+<header><h1>Option 3 · Editorial index: current blend vs. Good Times Lab system</h1>
+<div class="seg" role="group" aria-label="Viewport"><button type="button" aria-pressed="true" data-w="1440">Desktop</button><button type="button" data-w="390">Mobile</button></div></header>
+<main class="grid">
+  <section class="pane"><p><b>3 · Production + friend blend</b><a href="/mockups/3" target="_blank">Open ↗</a></p><div class="frame"><iframe src="/mockups/3" title="Option 3, production and friend blend"></iframe></div></section>
+  <section class="pane"><p><b>3B · Good Times Lab design system</b><a href="/mockups/3-gtl" target="_blank">Open ↗</a></p><div class="frame"><iframe src="/mockups/3-gtl" title="Option 3 in the Good Times Lab design system"></iframe></div></section>
+</main>
+<script>
+const W=()=>+document.querySelector('.seg [aria-pressed=true]').dataset.w;
+function fit(){const w=W();document.body.classList.toggle('mobile',w<500);if(w<500)return;
+document.querySelectorAll('.frame').forEach(f=>{const i=f.querySelector('iframe'),s=f.clientWidth/w;i.style.width=w+'px';i.style.height=(f.clientHeight/s)+'px';i.style.transform='scale('+s+')'})}
+document.querySelector('.seg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));fit()});
+addEventListener('resize',fit);fit();
+</script></body></html>
